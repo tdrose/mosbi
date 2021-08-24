@@ -1,0 +1,11 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+inst/doc
+*.Rproj
+*.tar.gz
+*.o
+*.so
+*.dll
+Meta/vignette.rds

@@ -1,0 +1,295 @@
+---
+title: "Example workflow"
+author: "Tim Daniel Rose"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{example-workflow}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+    collapse = TRUE,
+    comment = "#>"
+)
+```
+
+This vignette shows an example workflow for ensemble biclustering analysis 
+with the `metabiclustering` package.
+Every function of the package has a help page with a detailed documentation. 
+To access these type `help(package=metabiclustering)` in the `R` console.
+
+### Load packages
+
+Import dependencies.
+```{r setup, message=FALSE}
+library(mosbi)
+```
+
+### Helper functions
+
+Two additional functions are defined, to calculate z-scores of the data and 
+to visualize the biclusters as a histogram.
+```{r}
+z_score <- function(x, margin = 2) {
+    z_fun <- function(y) {
+        (y - mean(y, na.rm = TRUE)) / sd(y, na.rm = TRUE)
+    }
+
+    if (margin == 2) {
+        return(apply(x, margin, z_fun))
+    } else if (margin == 1) {
+        return(t(apply(x, margin, z_fun)))
+    }
+}
+
+bicluster_histo <- function(biclusters) {
+    cols <- mosbi::colhistogram(biclusters)
+    rows <- mosbi::rowhistogram(biclusters)
+
+    graphics::par(mfrow = c(1, 2))
+    hist(cols, main = "Column size ditribution")
+    hist(rows, main = "Row size ditribution")
+}
+```
+ 
+
+### 1. Download and prepare data
+
+Biclustering will be done on a data matrix. As an example,  
+lipidomics dataset from the metabolights database will be used 
+`https://www.ebi.ac.uk/metabolights/MTBLS562`. 
+The data consists of 40 samples (columns) and 245 lipids (rows).
+```{r, message=FALSE}
+# Download file
+download.file(paste0("https://www.ebi.ac.uk/metabolights/ws/studies/MTBLS562/",
+              "download/1fb6c4f0-e87b-463a-bc77-1a0ff345ec3d?file=",
+              "m_aging_mouse_brains_metabolite_profiling_mass_",
+              "spectrometry-1_v2_maf.tsv"),
+    destfile = "aging_mouse_brain_data.tsv"
+)
+
+# Load data
+data_table <- read.csv("aging_mouse_brain_data.tsv", sep = "\t")
+data_table <- data_table[c(
+    grep(
+        "metabolite_identification",
+        colnames(data_table)
+    ),
+    grep("^X", colnames(data_table))
+)]
+
+# Make data matrix
+data_matrix <- z_score(log2(as.matrix(data_table[2:ncol(data_table)])), 1)
+
+rownames(data_matrix) <- data_table$metabolite_identification
+
+stats::heatmap(data_matrix)
+```
+The data has a gaussian-like distribution and no missing values, 
+so we can proceed with biclustering.
+
+### 2. Compute biclusters
+
+The `mosbi` package is able to work with results of different 
+biclustering algorithms. The  approach unites the results 
+from different algorithms.
+The results of four example algorithms will be computed and 
+converted to `mosbi::bicluster` objects. For a list of all 
+supported biclustering algorithms/packages type `?mosbi::get_biclusters` 
+in the `R` console.
+```{r, message=FALSE}
+# Fabia
+fb <- mosbi::run_fabia(data_matrix) # In case the algorithms throws an error,
+# return an empty list
+
+# isa2
+BCisa <- mosbi::run_isa(data_matrix)
+
+# Plaid
+BCplaid <- mosbi::run_plaid(data_matrix)
+
+# QUBIC
+BCqubic <- mosbi::run_qubic(data_matrix)
+
+# Merge results of all algorithms
+all_bics <- c(fb, BCisa, BCplaid, BCqubic)
+
+bicluster_histo(all_bics)
+```
+The histogram visualizes the distribution of bicluster sizes 
+(separately for the number of rows and columns of each bicluster). 
+The total number of found biclusters are given in the title.
+
+### 3. Compute network
+
+The next step of the ensemble approach is the computation of a 
+similarity network of biclusters. To filter for for similarities due to 
+random overlaps of biclusters, we apply an error 
+model (For more details refer to our publication). 
+Different similarity metrics are available. 
+For details type `mosbi::bicluster_network` in the `R` console.
+```{r}
+bic_net <- mosbi::bicluster_network(all_bics, # List of biclusters
+    data_matrix, # Data matrix
+    n_randomizations = 5,
+    # Number of randomizations for the
+    # error model
+    MARGIN = "both",
+    # Use datapoints for metric evaluation
+    metric = 4, # Fowlkes–Mallows index
+    # For information about the metrics,
+    # visit the "Similarity metrics
+    # evaluation" vignette
+    n_steps = 1000,
+    # At how many steps should
+    # the cut-of is evaluated
+    plot_edge_dist = TRUE
+    # Plot the evaluation of cut-off estimation
+)
+```
+The two resulting plot visualize the process of cut-off estimation. 
+The right plot show the remaining number of edges for the computed 
+bicluster network (red) and for randomizations of biclusters (black). 
+The vertical red line showed the threshold with the highest 
+signal-to-noise ratio (SNR). All evaluated SNRs are again 
+visualized in the left plot. 
+
+
+The next plot shows the bicluster similarity matrix. 
+It reveals highly similar biclusters.
+```{r}
+stats::heatmap(get_adjacency(bic_net))
+```
+
+#### Visualize network
+
+Before the final step, extraction of bicluster 
+communities (ensemble biclusters), the bicluster 
+network can be layouted as a network.
+```{r}
+plot(bic_net)
+```
+The networks are plotted using the `igraph` package. `igraph` 
+specific plotting parameters can be added.
+For help type: `?igraph::plot.igraph`
+
+To see, which bicluster was generated by which algorithm, 
+the following function can be executed:
+```{r}
+mosbi::plot_algo_network(bic_net, all_bics, vertex.label = NA)
+```
+
+
+The downloaded data contains samples from different weeks of 
+development. This can be visualized on the network, showing 
+from which week the samples within a bicluster come from.
+```{r}
+# Prepare groups for plotting
+weeks <- vapply(
+    strsplit(colnames(data_matrix), "\\."),
+    function(x) {
+        return(x[1])
+    }, ""
+)
+
+names(weeks) <- colnames(data_matrix)
+
+print(sort(unique(weeks))) # 5 colors required
+
+week_cols <- c("yellow", "orange", "red", "green", "brown")
+
+# Plot network colored by week
+mosbi::plot_piechart_bicluster_network(bic_net, all_bics, weeks,
+    week_cols,
+    vertex.label = NA
+)
+graphics::legend("topright",
+    legend = sort(unique(weeks)),
+    fill = week_cols, title = "Week"
+)
+```
+
+Such a visualization is also possible for the samples:
+```{r}
+# Prepare groups for plotting
+samples <- vapply(
+    strsplit(colnames(data_matrix), "\\."),
+    function(x) {
+        return(x[2])
+    }, ""
+)
+
+names(samples) <- colnames(data_matrix)
+
+samples_cols <- RColorBrewer::brewer.pal(
+    n = length(sort(unique(samples))),
+    name = "Set3"
+)
+
+
+# Plot network colored by week
+mosbi::plot_piechart_bicluster_network(bic_net, all_bics, samples,
+    samples_cols,
+    vertex.label = NA
+)
+graphics::legend("topright",
+    legend = sort(unique(samples)),
+    fill = samples_cols, title = "Sample"
+)
+```
+
+### 4. Extract louvain communities
+
+Calculate the communities
+```{r}
+coms <- mosbi::get_louvain_communities(bic_net,
+    min_size = 3,
+    bics = all_bics
+)
+# Only communities with a minimum size of 3 biclusters are saved.
+```
+
+
+#### Visualization of the communities
+```{r}
+# Plot all communities
+for (i in seq(1, length(coms))) {
+    tmp_bics <- mosbi::select_biclusters_from_bicluster_network(
+        coms[[i]],
+        all_bics
+    )
+
+    mosbi::plot_piechart_bicluster_network(coms[[i]], tmp_bics,
+        weeks, week_cols,
+        main = paste0("Community ", i)
+    )
+    graphics::legend("topright",
+        legend = sort(unique(weeks)),
+        fill = week_cols, title = "Week"
+    )
+
+    cat("\nCommunity ", i, " conists of results from the
+             following algorithms:\n")
+    cat(get_bic_net_algorithms(coms[[i]]))
+    cat("\n")
+}
+```
+
+#### Extraction of the communities
+
+Finally, communities of the network can be extracted as ensemble biclusters. 
+The are saved as a list of `mosbi::bicluster` objects and therefore in the 
+same format as the imported results of all the algorithms. 
+With the parameters `row_threshold` & `col_threshold`, 
+the minimum occurrence of a row- or column-element in the biclusters 
+of a community can be defined.
+```{r}
+ensemble_bicluster_list <- mosbi::ensemble_biclusters(coms, all_bics,
+    data_matrix,
+    row_threshold = .1,
+    col_threshold = .1
+)
+```
