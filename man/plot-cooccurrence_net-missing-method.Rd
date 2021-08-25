@@ -21,7 +21,7 @@ An \link[igraph]{graph} plot.
 Converts the object into a \link[igraph]{graph} and uses its plot function.
 }
 \examples{
-m <- matrix(rnorm(10000), nrow=100)
+# m <- matrix(rnorm(10000), nrow=100)
 # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
 # fn <- feature_network(bics, m)
 # plot(fn)

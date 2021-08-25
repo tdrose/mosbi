@@ -17,7 +17,7 @@ using cube = std::vector<matrix>;
 //' @return An integer matrix.
 //' 
 //' @examples
-//' m <- matrix(rnorm(10000), nrow=100)
+//' # m <- matrix(rnorm(10000), nrow=100)
 //' replace_threshold(m, 1)
 //' 
 //' @export
@@ -55,7 +55,7 @@ IntegerMatrix replace_threshold(IntegerMatrix m, int threshold){
 //' nrow(m))} (\code{c(ncol(m), ncol(m))})
 //' 
 //' @examples
-//' m <- matrix(rnorm(10000), nrow=100)
+//' # m <- matrix(rnorm(10000), nrow=100)
 //' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
 //' # attribute_graph(bics, m)
 //'

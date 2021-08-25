@@ -30,7 +30,7 @@ Extract a list of bicluster objects from an BicARE biclustering object.
 }
 \examples{
 # Note that BicARE packackage is not included in the mosbi package
-m <- matrix(rnorm(10000), nrow=100)
+# m <- matrix(rnorm(10000), nrow=100)
 # res <- BicARE::FLOC(m)
 # getBicAREbiclusters(res, m)
 

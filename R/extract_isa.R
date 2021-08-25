@@ -21,7 +21,7 @@ NoIsa <- function(bics) {
 #' 
 #' @examples
 #' # Function part of:
-#' m <- matrix(rnorm(10000), nrow=100)
+#' # m <- matrix(rnorm(10000), nrow=100)
 #' # Not run: run_isa(m)
 #' 
 #' @export

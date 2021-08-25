@@ -70,7 +70,7 @@ extract_bf <- function(bics, mat, method, transposed, filterfun, ...){
 #' valid (See \code{\link{validate_bicluster}}).
 #' 
 #' @examples
-#' m <- matrix(rnorm(10000), nrow=100)
+#' # m <- matrix(rnorm(10000), nrow=100)
 #' # res <- isa2::isa(m)
 #' # get_biclusters(res, m, "isa")
 #' 

@@ -33,7 +33,7 @@ the number of edges divided by two.
 Uses the function \code{\link{replace_values_float}}.
 }
 \examples{
-m <- matrix(rnorm(10000), nrow=100)
+# m <- matrix(rnorm(10000), nrow=100)
 # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
 # bn <- bicluster_network(bics, m)
 # network_edge_strength_float(apply_threshold(bn))

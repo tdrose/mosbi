@@ -30,7 +30,7 @@ Extract a list of bicluster objects from an isa2 biclustering object.
 }
 \examples{
 # Function part of:
-m <- matrix(rnorm(10000), nrow=100)
+# m <- matrix(rnorm(10000), nrow=100)
 # Not run: run_isa(m)
 
 }

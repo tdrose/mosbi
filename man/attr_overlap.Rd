@@ -19,7 +19,7 @@ Given a list of bicluster objects (\code{\link{bicluster}}),
 the function counts the occurance of all elements in the biclusters.
 }
 \examples{
-m <- matrix(rnorm(10000), nrow=100)
+# m <- matrix(rnorm(10000), nrow=100)
 # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
 # attr_overlap(bics, named=FALSE)
 

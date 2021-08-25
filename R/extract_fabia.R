@@ -20,7 +20,7 @@ NoFabia <- function(bics) {
 #' be valid (See \code{\link{validate_bicluster}}.
 #' 
 #' @examples
-#' m <- matrix(rnorm(10000), nrow=100)
+#' # m <- matrix(rnorm(10000), nrow=100)
 #' # res <- fabia::extractBic(fabia::fabia(m, p=5))
 #' # getFabiaClusters(res, m)
 #' 

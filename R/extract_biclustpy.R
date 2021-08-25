@@ -16,7 +16,7 @@ NULL
 #' to be valid (See \code{\link{validate_bicluster}}.
 #' 
 #' @examples
-#' m <- matrix(rnorm(10000), nrow=100)
+#' # m <- matrix(rnorm(10000), nrow=100)
 #' # Not run: getBiclustpyClusters("PathToFileOfBiclustpyResults", m)
 #' 
 #' @export
