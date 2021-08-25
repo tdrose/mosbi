@@ -287,7 +287,7 @@ List filter_bicluster_size(List bics, unsigned int minRow,
   List tmp = List();
   
   for(auto b: bics){
-    if(validate_bicluster(b, minRow=minRow, minCol=minCol))
+    if(validate_bicluster(b, minRow, minCol))
       tmp.push_back(b);
   }
   return(tmp);

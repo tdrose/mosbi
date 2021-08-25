@@ -10,7 +10,7 @@ get_runibic_function()
 Function as a string, which can be executed.
 }
 \description{
-The function executes the \link[runibic]{BCUnibic} biclustering algorithm,
+The function executes the runibic::BCUnibic biclustering algorithm,
 returning a list of biclusters converted into bicluster objects
 compatible with this package.
 If the algorithm fails to run, an empty list is returned.
@@ -26,7 +26,7 @@ execute the result of the function in R to run the UniBic in R.
 
 # @param minCol Same parameters as in \link{filter_bicluster_size}.
 
-# @param ... Other parameters forwarded to the \link[runibic]{BCUnibic}
+# @param ... Other parameters forwarded to the runibic::BCUnibic function.
 function.
 
 # @return a list of \link{bicluster} objects.

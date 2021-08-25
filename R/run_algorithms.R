@@ -408,7 +408,7 @@ run_xmotifs <- function(data_matrix, minRow = 2, minCol = 2, ...) {
 
 #' Run the UniBic biclustering algorithm
 #'
-#' The function executes the \link[runibic]{BCUnibic} biclustering algorithm,
+#' The function executes the runibic::BCUnibic biclustering algorithm,
 #' returning a list of biclusters converted into bicluster objects
 #' compatible with this package.
 #' If the algorithm fails to run, an empty list is returned.
@@ -423,7 +423,7 @@ run_xmotifs <- function(data_matrix, minRow = 2, minCol = 2, ...) {
 #' 
 #' # @param minCol Same parameters as in \link{filter_bicluster_size}.
 #' 
-#' # @param ... Other parameters forwarded to the \link[runibic]{BCUnibic}
+#' # @param ... Other parameters forwarded to the runibic::BCUnibic function.
 #' function.
 #' 
 #' # @return a list of \link{bicluster} objects.

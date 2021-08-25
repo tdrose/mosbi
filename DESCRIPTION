@@ -1,6 +1,6 @@
 Package: mosbi
 Title: Molecular Signature identification using Biclustering
-Version: 0.99.8
+Version: 0.99.9
 Authors@R: c(
   person("Tim Daniel", "Rose", email="tim.rose@wzw.tum.de", 
   role = c("cre", "aut")),
@@ -21,7 +21,7 @@ Description: This package is a implementation of biclustering ensemble
   to give an intuitive and scalable overview of the results.
   MoSBi comes with several biclustering algorithms, but can be easily 
   extended to new biclustering algorithms.
-License: AGPL-3
+License: AGPL-3 + file LICENSE
 Encoding: UTF-8
 RoxygenNote: 7.1.1
 Depends: R (>= 4.1)
