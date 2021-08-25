@@ -6,6 +6,9 @@
 \usage{
 get_runibic_function()
 }
+\value{
+Function as a string, which can be executed.
+}
 \description{
 The function executes the \link[runibic]{BCUnibic} biclustering algorithm,
 returning a list of biclusters converted into bicluster objects
@@ -27,8 +30,6 @@ execute the result of the function in R to run the UniBic in R.
 function.
 
 # @return a list of \link{bicluster} objects.
-
-# @return Function as a string, which can be executed.
 }
 \examples{
 m <- matrix(seq(1:16), nrow=4)

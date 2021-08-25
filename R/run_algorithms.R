@@ -428,7 +428,7 @@ run_xmotifs <- function(data_matrix, minRow = 2, minCol = 2, ...) {
 #' 
 #' # @return a list of \link{bicluster} objects.
 #' 
-#' # @return Function as a string, which can be executed.
+#' @return Function as a string, which can be executed.
 #' @examples
 #' m <- matrix(seq(1:16), nrow=4)
 #' # m <- matrix(rnorm(10000), nrow=100)
