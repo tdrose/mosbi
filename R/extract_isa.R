@@ -20,6 +20,7 @@ NoIsa <- function(bics) {
 #' to be valid (See \code{\link{validate_bicluster}}.
 #' 
 #' @examples
+#' m <- matrix(seq(1:16), nrow=4)
 #' # Function part of:
 #' # m <- matrix(rnorm(10000), nrow=100)
 #' # Not run: run_isa(m)

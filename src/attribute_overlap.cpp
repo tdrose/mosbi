@@ -13,6 +13,7 @@ using namespace Rcpp;
 //' @return A Data Frame with the counts oof all elements.
 //' 
 //' @examples
+//' m <- matrix(seq(1:16), nrow=4)
 //' # m <- matrix(rnorm(10000), nrow=100)
 //' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
 //' # attr_overlap(bics, named=FALSE)
@@ -111,6 +112,7 @@ DataFrame attr_overlap(List bics, bool named){
 //' the list of biclusters.
 //' 
 //' @examples
+//' m <- matrix(seq(1:16), nrow=4)
 //' # m <- matrix(rnorm(10000), nrow=100)
 //' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
 //' # occurance_matrix(bics, m)
@@ -153,6 +155,7 @@ NumericMatrix occurance_matrix(const List bics, const NumericMatrix mat){
 //' than a \code{threshold}.
 //' 
 //' @examples
+//' m <- matrix(seq(1:16), nrow=4)
 //' # m <- matrix(rnorm(10000), nrow=100)
 //' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
 //' # occurance_table(bics, m, threshold=.1)

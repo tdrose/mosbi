@@ -23,6 +23,7 @@ object using the louvain modularity optimization from the \code{igraph}
 package (\code{\link[igraph]{cluster_louvain}}).
 }
 \examples{
+m <- matrix(seq(1:16), nrow=4)
 # m <- matrix(rnorm(10000), nrow=100)
 # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
 # fn <- feature_network(bics, m)

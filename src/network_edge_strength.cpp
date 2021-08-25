@@ -108,6 +108,7 @@ NumericMatrix replace_values_float(NumericMatrix mat,
 //' indicated the applied threshold, the second column the remaining edges.
 //' 
 //' @examples
+//' m <- matrix(seq(1:16), nrow=4)
 //' # m <- matrix(rnorm(10000), nrow=100)
 //' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
 //' # fn <- feature_network(bics, m)
@@ -175,6 +176,7 @@ struct ReplaceWorker : public Worker
 //' column the remaining edges.
 //' 
 //' @examples
+//' m <- matrix(seq(1:16), nrow=4)
 //' # m <- matrix(rnorm(10000), nrow=100)
 //' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
 //' # bn <- bicluster_network(bics, m)

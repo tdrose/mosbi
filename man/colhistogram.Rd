@@ -16,6 +16,7 @@ A vector with the lenghts of the columns in every bicluster object.
 Can be used for e.g. histograms.
 }
 \examples{
+m <- matrix(seq(1:16), nrow=4)
 # m <- matrix(rnorm(10000), nrow=100)
 # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
 # colhistogram(bics)

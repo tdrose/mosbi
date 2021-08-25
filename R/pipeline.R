@@ -11,6 +11,7 @@ NULL
 #' @return A filtered numeric matrix.
 #' 
 #' @examples
+#' m <- matrix(seq(1:16), nrow=4)
 #' # m <- matrix(rnorm(10000), nrow=100)
 #' # filter_matrix(m, threshold=1)
 #'
@@ -162,6 +163,7 @@ org_similarity <- function(MARGIN, bics, metric, prob_scale, mat, prl){
 #' @return An object of class \code{\link{bicluster_net}}.
 #' 
 #' @examples 
+#' m <- matrix(seq(1:16), nrow=4)
 #' # m <- matrix(rnorm(10000), nrow=100)
 #' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
 #' # bicluster_network(bics, m)
@@ -268,6 +270,7 @@ random_f_similarities <- function(bics, mat, n_randomizations, rr, rc, cc, w,
 #' @return An object of class \code{\link{cooccurrence_net}}.
 #' 
 #' @examples 
+#' m <- matrix(seq(1:16), nrow=4)
 #' # m <- matrix(rnorm(10000), nrow=100)
 #' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
 #' # feature_network(bics, m)

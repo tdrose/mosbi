@@ -22,6 +22,7 @@ This might be necessary e.g. after \code{\link{get_louvain_communities}}
 was used a community consists only of a subset of the biclusters.
 }
 \examples{
+m <- matrix(seq(1:16), nrow=4)
 # m <- matrix(rnorm(10000), nrow=100)
 # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
 # bn <- bicluster_network(bics, m)

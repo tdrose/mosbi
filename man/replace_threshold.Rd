@@ -20,6 +20,7 @@ This function replaces all elements of an integer matrix, which are under a
 certain threshold (<) with zero.
 }
 \examples{
+m <- matrix(seq(1:16), nrow=4)
 # m <- matrix(rnorm(10000), nrow=100)
 # replace_threshold(m, 1)
 

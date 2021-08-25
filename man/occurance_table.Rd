@@ -22,6 +22,7 @@ The function uses the \code{\link{occurance_matrix}} function and
 returns all values higher than the \code{threshold} as a DataFrame.
 }
 \examples{
+m <- matrix(seq(1:16), nrow=4)
 # m <- matrix(rnorm(10000), nrow=100)
 # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
 # occurance_table(bics, m, threshold=.1)

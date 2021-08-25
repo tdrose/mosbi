@@ -1,6 +1,6 @@
 Package: mosbi
 Title: Molecular Signature identification using Biclustering
-Version: 0.99.3
+Version: 0.99.4
 Authors@R: c(
   person("Tim Daniel", "Rose", email="tim.rose@wzw.tum.de", 
   role = c("cre", "aut")),
@@ -47,7 +47,6 @@ Imports:
     RColorBrewer
 Suggests:
     knitr,
-    runibic,
     rmarkdown,
     RUnit, 
     BiocGenerics

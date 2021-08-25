@@ -29,6 +29,7 @@ to be valid (See \code{\link{validate_bicluster}}.
 Extract a list of bicluster objects from an biclustpy output file.
 }
 \examples{
+m <- matrix(seq(1:16), nrow=4)
 # m <- matrix(rnorm(10000), nrow=100)
 # Not run: getBiclustpyClusters("PathToFileOfBiclustpyResults", m)
 

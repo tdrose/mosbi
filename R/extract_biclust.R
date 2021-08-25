@@ -24,6 +24,7 @@ NoBiclust <- function(bics) {
 #' to be valid (See \code{\link{validate_bicluster}}.
 #' 
 #' @examples
+#' m <- matrix(seq(1:16), nrow=4)
 #' # m <- matrix(rnorm(10000), nrow=100)
 #' # res <- biclust::biclust(m, method = biclust::BCBimax())
 #' # getBiclustClusters(res, m)

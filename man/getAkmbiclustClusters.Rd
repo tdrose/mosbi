@@ -31,6 +31,7 @@ Extract a list of bicluster objects from an akmbiclust biclustering object.
 }
 \examples{
 # Function called in
+m <- matrix(seq(1:16), nrow=4)
 # m <- matrix(rnorm(10000), nrow=100)
 # Not run: run_akmbiclust(m, k=10)
 

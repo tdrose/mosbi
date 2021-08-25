@@ -17,6 +17,7 @@ used for each bicluster of the input list.
 Can be used for .g. histograms.
 }
 \examples{
+m <- matrix(seq(1:16), nrow=4)
 # m <- matrix(rnorm(10000), nrow=100)
 # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
 # algohistogram(bics)

@@ -18,6 +18,7 @@ A filtered numeric matrix.
 All values below the threshold will be replaces by 0.
 }
 \examples{
+m <- matrix(seq(1:16), nrow=4)
 # m <- matrix(rnorm(10000), nrow=100)
 # filter_matrix(m, threshold=1)
 

@@ -29,9 +29,9 @@ Every bicluster is validated, before forwarding to the filter-function.
 }
 \examples{
 # m <- matrix(runif(100), nrow=10)
-# b <- list(bicluster(row=c(3,4), column=c(3,4)),
-#     bicluster(row=c(3,4,5,6), column=c(3,4,5,6)),
-#     bicluster(row=c(3,4,5,6), column=c(3,6)))
+b <- list(bicluster(row=c(3,4), column=c(3,4)),
+    bicluster(row=c(3,4,5,6), column=c(3,4,5,6)),
+    bicluster(row=c(3,4,5,6), column=c(3,6)))
 # filter_biclusters(b, m, function(x) sum(x) < 0)
 
 }

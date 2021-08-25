@@ -12,6 +12,7 @@
 #' @return An integer matrix.
 #' 
 #' @examples
+#' m <- matrix(seq(1:16), nrow=4)
 #' # m <- matrix(rnorm(10000), nrow=100)
 #' # replace_threshold(m, 1)
 #' 
@@ -38,6 +39,7 @@ replace_threshold <- function(m, threshold) {
 #' nrow(m))} (\code{c(ncol(m), ncol(m))})
 #' 
 #' @examples
+#' m <- matrix(seq(1:16), nrow=4)
 #' # m <- matrix(rnorm(10000), nrow=100)
 #' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
 #' # attribute_graph(bics, m)
@@ -67,6 +69,7 @@ attribute_graph <- function(bics, m, MARGIN = "column") {
 #' parameter \code{otherclasses}).
 #' 
 #' @examples
+#' m <- matrix(seq(1:16), nrow=4)
 #' # m <- matrix(rnorm(10000), nrow=100)
 #' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
 #' # fn <- feature_network(bics, m)
@@ -88,6 +91,7 @@ attributeConnector <- function(mat, otherclasses, useOther = FALSE) {
 #' @return A Data Frame with the counts oof all elements.
 #' 
 #' @examples
+#' m <- matrix(seq(1:16), nrow=4)
 #' # m <- matrix(rnorm(10000), nrow=100)
 #' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
 #' # attr_overlap(bics, named=FALSE)
@@ -110,6 +114,7 @@ attr_overlap <- function(bics, named) {
 #' the list of biclusters.
 #' 
 #' @examples
+#' m <- matrix(seq(1:16), nrow=4)
 #' # m <- matrix(rnorm(10000), nrow=100)
 #' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
 #' # occurance_matrix(bics, m)
@@ -131,6 +136,7 @@ occurance_matrix <- function(bics, mat) {
 #' than a \code{threshold}.
 #' 
 #' @examples
+#' m <- matrix(seq(1:16), nrow=4)
 #' # m <- matrix(rnorm(10000), nrow=100)
 #' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
 #' # occurance_table(bics, m, threshold=.1)
@@ -280,6 +286,7 @@ filter_bicluster_size <- function(bics, minRow, minCol) {
 #' @import BH
 #' 
 #' @examples
+#' m <- matrix(seq(1:16), nrow=4)
 #' # m <- matrix(rnorm(10000), nrow=100)
 #' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
 #' # bn <- bicluster_network(bics, m)
@@ -471,7 +478,8 @@ p_overlap_2d_higher <- function(ov_x, ov_y, s1x, s1y, s2x, s2y, mat_x, mat_y) {
 #' @return Number of biclusters.
 #' 
 #' @examples
-#' # NoBFBiclusters("PathToBiForceOutput.txt")
+#' a <- "PathToBiForceOutput.txt"
+#' # NoBFBiclusters(a)
 #' 
 #' @export
 NoBFBiclusters <- function(filename) {
@@ -485,7 +493,8 @@ NoBFBiclusters <- function(filename) {
 #' and colnames in attribute "column".
 #' 
 #' @examples
-#' # getBFCluster("PathToBiForceOutput.txt", cluster=1)
+#' a <- "PathToBiForceOutput.txt"
+#' # getBFCluster(a, cluster=1)
 #' 
 #' @export
 getBFCluster <- function(filename, cluster) {
@@ -497,7 +506,8 @@ getBFCluster <- function(filename, cluster) {
 #' @return List of biclusters in the form of \code{\link{getBFCluster}}
 #' 
 #' @examples
-#' # getallBFClusters("PathToBiForceOutput.txt")
+#' a <- "PathToBiForceOutput.txt"
+#' # getallBFClusters(a)
 #' 
 #' 
 #' @export
@@ -516,7 +526,8 @@ getallBFClusters <- function(filename) {
 #' objects (See \code{\link{validate_bicluster}}).
 #' 
 #' @examples
-#' # Not run: getQUBIC2biclusters("PathToQUBIC2output.txt")
+#' a <- "PathToQUBIC2output.txt"
+#' # Not run: getQUBIC2biclusters(a)
 #' 
 #' @export
 getQUBIC2biclusters <- function(filename, transposed = FALSE) {
@@ -549,7 +560,7 @@ getQUBIC2biclusters <- function(filename, transposed = FALSE) {
 #' b <- list(bicluster(row=c(1,2,3,4), column=c(1,2,3,4)),
 #'         bicluster(row=c(3,4,5,6), column=c(3,4,5,6)),
 #'         bicluster(row=c(3,4,5,6), column=c(3,4,5,6)))
-#' full_graph(b, m)
+#' # full_graph(b, m)
 #' 
 #' @export
 full_graph <- function(bics, m, rr_weight = 1L, rc_weight = 1L, cc_weight = 1L, weighting = 0L) {
@@ -645,6 +656,7 @@ replace_values_float <- function(mat, threshold, replace_higher = TRUE) {
 #' indicated the applied threshold, the second column the remaining edges.
 #' 
 #' @examples
+#' m <- matrix(seq(1:16), nrow=4)
 #' # m <- matrix(rnorm(10000), nrow=100)
 #' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
 #' # fn <- feature_network(bics, m)
@@ -677,6 +689,7 @@ network_edge_strength <- function(adjm) {
 #' column the remaining edges.
 #' 
 #' @examples
+#' m <- matrix(seq(1:16), nrow=4)
 #' # m <- matrix(rnorm(10000), nrow=100)
 #' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
 #' # bn <- bicluster_network(bics, m)
@@ -694,6 +707,7 @@ network_edge_strength_float <- function(adjm, steps = 100L, maximum = 0) {
 #' @return A vector with the lenghts of the rows in every bicluster object.
 #' 
 #' @examples
+#' m <- matrix(seq(1:16), nrow=4)
 #' # m <- matrix(rnorm(10000), nrow=100)
 #' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
 #' # rowhistogram(bics)
@@ -710,6 +724,7 @@ rowhistogram <- function(bic) {
 #' @return A vector with the lenghts of the columns in every bicluster object.
 #' 
 #' @examples
+#' m <- matrix(seq(1:16), nrow=4)
 #' # m <- matrix(rnorm(10000), nrow=100)
 #' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
 #' # colhistogram(bics)
@@ -727,6 +742,7 @@ colhistogram <- function(bic) {
 #' used for each bicluster of the input list.
 #' 
 #' @examples
+#' m <- matrix(seq(1:16), nrow=4)
 #' # m <- matrix(rnorm(10000), nrow=100)
 #' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
 #' # algohistogram(bics)
@@ -747,6 +763,7 @@ algohistogram <- function(bic) {
 #' @return A list of \link{bicluster} objects.
 #' 
 #' @examples
+#' m <- matrix(seq(1:16), nrow=4)
 #' # m <- matrix(rnorm(10000), nrow=100)
 #' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
 #' # sample_biclusters(bics, m)

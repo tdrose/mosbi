@@ -21,6 +21,7 @@ Extract biclusters from a QUBIC2 "*.blocks" file.
 Row and column names are not added to the bicluster objects.
 }
 \examples{
-# Not run: getQUBIC2biclusters("PathToQUBIC2output.txt")
+a <- "PathToQUBIC2output.txt"
+# Not run: getQUBIC2biclusters(a)
 
 }

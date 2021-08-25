@@ -29,6 +29,7 @@ to be valid (See \code{\link{validate_bicluster}}.
 Extract a list of bicluster objects from an isa2 biclustering object.
 }
 \examples{
+m <- matrix(seq(1:16), nrow=4)
 # Function part of:
 # m <- matrix(rnorm(10000), nrow=100)
 # Not run: run_isa(m)

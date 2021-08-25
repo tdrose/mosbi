@@ -18,6 +18,7 @@ NULL
 #' @return a list of \link{bicluster} objects.
 #' 
 #' @examples
+#' m <- matrix(seq(1:16), nrow=4)
 #' # m <- matrix(rnorm(1000), nrow=10)
 #' # run_fabia(m, p=5)
 #'
@@ -64,6 +65,7 @@ run_fabia <- function(data_matrix, minRow = 2, minCol = 2, thresZ = 0.5,
 #' @return a list of \link{bicluster} objects.
 #' 
 #' @examples
+#' m <- matrix(seq(1:16), nrow=4)
 #' # m <- matrix(rnorm(10000), nrow=100)
 #' # Not run: run_isa(m)
 #'
@@ -105,6 +107,7 @@ run_isa <- function(data_matrix, minRow = 2, minCol = 2, ...) {
 #' @return a list of \link{bicluster} objects.
 #' 
 #' @examples
+#' m <- matrix(seq(1:16), nrow=4)
 #' # m <- matrix(rnorm(10000), nrow=100)
 #' # run_qubic(m)
 #'
@@ -154,6 +157,7 @@ run_qubic <- function(data_matrix, minRow = 2, minCol = 2, ...) {
 #' @return a list of \link{bicluster} objects.
 #' 
 #' @examples
+#' m <- matrix(seq(1:16), nrow=4)
 #' # m <- matrix(rnorm(10000), nrow=100)
 #' # run_plaid(m)
 #'
@@ -197,6 +201,7 @@ run_plaid <- function(data_matrix, minRow = 2, minCol = 2, ...) {
 #' @return a list of \link{bicluster} objects.
 #' 
 #' @examples
+#' m <- matrix(seq(1:16), nrow=4)
 #' # m <- matrix(rnorm(10000), nrow=100)
 #' # run_bimax(m)
 #'
@@ -240,6 +245,7 @@ run_bimax <- function(data_matrix, minRow = 2, minCol = 2, ...) {
 #' @return a list of \link{bicluster} objects.
 #' 
 #' @examples
+#' m <- matrix(seq(1:16), nrow=4)
 #' # m <- matrix(rnorm(10000), nrow=100)
 #' # run_spectral(m)
 #'
@@ -283,6 +289,7 @@ run_spectral <- function(data_matrix, minRow = 2, minCol = 2, ...) {
 #' @return a list of \link{bicluster} objects.
 #' 
 #' @examples
+#' m <- matrix(seq(1:16), nrow=4)
 #' # m <- matrix(rnorm(10000), nrow=100)
 #' # run_quest(m)
 #'
@@ -325,6 +332,7 @@ run_quest <- function(data_matrix, minRow = 2, minCol = 2, ...) {
 #' @return a list of \link{bicluster} objects.
 #' 
 #' @examples
+#' m <- matrix(seq(1:16), nrow=4)
 #' # m <- matrix(rnorm(10000), nrow=100)
 #' # run_cc(m)
 #'
@@ -369,6 +377,7 @@ run_cc <- function(data_matrix, minRow = 2, minCol = 2, ...) {
 #' @return a list of \link{bicluster} objects.
 #' 
 #' @examples
+#' m <- matrix(seq(1:16), nrow=4)
 #' # m <- matrix(rnorm(10000), nrow=100)
 #' # run_xmotifs(m)
 #'
@@ -412,6 +421,7 @@ run_xmotifs <- function(data_matrix, minRow = 2, minCol = 2, ...) {
 #' @return a list of \link{bicluster} objects.
 #' 
 #' @examples
+#' m <- matrix(seq(1:16), nrow=4)
 #' # m <- matrix(rnorm(10000), nrow=100)
 #' # run_unibic(m, nbic=10)
 #'
@@ -454,6 +464,7 @@ run_unibic <- function(data_matrix, minRow = 2, minCol = 2, ...) {
 #' @return a list of \link{bicluster} objects.
 #' 
 #' @examples
+#' m <- matrix(seq(1:16), nrow=4)
 #' # set.seed(10)
 #' # m <- matrix(rnorm(10000), nrow=100)
 #' # Not run: run_akmbiclust(m, k=10)

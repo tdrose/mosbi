@@ -48,6 +48,6 @@ m <- matrix(seq(1:16), nrow=4)
 b <- list(bicluster(row=c(1,2,3,4), column=c(1,2,3,4)),
         bicluster(row=c(3,4,5,6), column=c(3,4,5,6)),
         bicluster(row=c(3,4,5,6), column=c(3,4,5,6)))
-full_graph(b, m)
+# full_graph(b, m)
 
 }

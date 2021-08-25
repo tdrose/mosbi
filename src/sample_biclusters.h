@@ -11,6 +11,7 @@ using namespace Rcpp;
 //' @return A vector with the lenghts of the rows in every bicluster object.
 //' 
 //' @examples
+//' m <- matrix(seq(1:16), nrow=4)
 //' # m <- matrix(rnorm(10000), nrow=100)
 //' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
 //' # rowhistogram(bics)
@@ -26,6 +27,7 @@ NumericVector rowhistogram(List bic);
 //' @return A vector with the lenghts of the columns in every bicluster object.
 //' 
 //' @examples
+//' m <- matrix(seq(1:16), nrow=4)
 //' # m <- matrix(rnorm(10000), nrow=100)
 //' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
 //' # colhistogram(bics)
@@ -42,6 +44,7 @@ NumericVector colhistogram(List bic);
 //' used for each bicluster of the input list.
 //' 
 //' @examples
+//' m <- matrix(seq(1:16), nrow=4)
 //' # m <- matrix(rnorm(10000), nrow=100)
 //' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
 //' # algohistogram(bics)
@@ -61,6 +64,7 @@ CharacterVector algohistogram(List bic);
 //' @return A list of \link{bicluster} objects.
 //' 
 //' @examples
+//' m <- matrix(seq(1:16), nrow=4)
 //' # m <- matrix(rnorm(10000), nrow=100)
 //' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
 //' # sample_biclusters(bics, m)
