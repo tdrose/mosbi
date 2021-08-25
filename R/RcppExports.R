@@ -13,7 +13,7 @@
 #' 
 #' @examples
 #' # m <- matrix(rnorm(10000), nrow=100)
-#' replace_threshold(m, 1)
+#' # replace_threshold(m, 1)
 #' 
 #' @export
 replace_threshold <- function(m, threshold) {

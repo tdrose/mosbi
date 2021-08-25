@@ -45,9 +45,9 @@ Only biclusters are returned which have a minimum dimension of 2x2.
 \examples{
 b <- list(bicluster(row=c(1,2,3,4), column=c(1,2,3,4)),
     bicluster(row=c(3,4,5,6), column=c(3,4,5,6)))
-m <- matrix(runif(100), nrow=10)
-tm = matrix(c(0,1,1,0), nrow=2)
-bn <- list(bicluster_net(adjacency_matrix=tm, threshold=.5))
-ensemble_biclusters(bn, b, m)
+# m <- matrix(runif(100), nrow=10)
+# tm = matrix(c(0,1,1,0), nrow=2)
+# bn <- list(bicluster_net(adjacency_matrix=tm, threshold=.5))
+# ensemble_biclusters(bn, b, m)
 
 }

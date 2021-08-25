@@ -12,7 +12,7 @@ NULL
 #' 
 #' @examples
 #' # m <- matrix(rnorm(10000), nrow=100)
-#' filter_matrix(m, threshold=1)
+#' # filter_matrix(m, threshold=1)
 #'
 #' @export
 filter_matrix <- function(mat, threshold = 1) {

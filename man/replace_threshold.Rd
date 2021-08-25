@@ -21,6 +21,6 @@ certain threshold (<) with zero.
 }
 \examples{
 # m <- matrix(rnorm(10000), nrow=100)
-replace_threshold(m, 1)
+# replace_threshold(m, 1)
 
 }
