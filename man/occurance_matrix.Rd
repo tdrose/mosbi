@@ -23,7 +23,7 @@ of the data points in the input list of biclusters.
 }
 \examples{
 m <- matrix(rnorm(10000), nrow=100)
-bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-occurance_matrix(bics, m)
+# bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+# occurance_matrix(bics, m)
 
 }

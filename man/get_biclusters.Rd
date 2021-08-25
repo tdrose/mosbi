@@ -48,7 +48,7 @@ But their results can be converted using this function.
 }
 \examples{
 m <- matrix(rnorm(10000), nrow=100)
-res <- isa2::isa(m)
-get_biclusters(res, m, "isa")
+# res <- isa2::isa(m)
+# get_biclusters(res, m, "isa")
 
 }

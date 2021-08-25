@@ -19,6 +19,6 @@ and colnames in attribute "column".
 Get a bicluster a Bi-Force output file
 }
 \examples{
-getBFCluster("PathToBiForceOutput.txt", cluster=1)
+# getBFCluster("PathToBiForceOutput.txt", cluster=1)
 
 }

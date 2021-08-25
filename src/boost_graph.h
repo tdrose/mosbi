@@ -12,7 +12,4 @@ void generate_boost_graph(mygraph &g,
                           NumericMatrix m, 
                           CharacterVector cols = CharacterVector());
 
-int write_graphml(NumericMatrix m, String filename, 
-                  CharacterVector cols = CharacterVector());
-
 #endif

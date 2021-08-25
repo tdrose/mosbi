@@ -37,6 +37,6 @@ If the algorithm fails to run, an empty list is returned.
 }
 \examples{
 m <- matrix(rnorm(1000), nrow=10)
-run_fabia(m, p=5)
+# run_fabia(m, p=5)
 
 }

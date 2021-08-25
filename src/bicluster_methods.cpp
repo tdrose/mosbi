@@ -256,10 +256,10 @@ NumericMatrix cpp_matrix_subsetting(NumericMatrix m, S4 bic){
   NumericMatrix out(rl, cl);
   
   for (int i=0; i<cl; i++){
-    NumericMatrix::Column org_c = m(_, c[i]-1);
+    NumericMatrix::Column org_c = m(_, c[i]);
     NumericMatrix::Column new_c = out(_, i);
     for (int j=0; j<rl; j++){
-      new_c[j] = org_c[r[j]-1];
+      new_c[j] = org_c[r[j]];
     }
   }
   return(out);

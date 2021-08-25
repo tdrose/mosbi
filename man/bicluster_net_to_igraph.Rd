@@ -19,8 +19,8 @@ The \code{threshold} is used as a cutoff for the edges of the network.
 }
 \examples{
 m <- matrix(rnorm(10000), nrow=100)
-bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-bn <- bicluster_network(bics, m)
-bicluster_net_to_igraph(bn)
+# bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+# bn <- bicluster_network(bics, m)
+# bicluster_net_to_igraph(bn)
 
 }

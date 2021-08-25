@@ -39,8 +39,8 @@ replace_threshold <- function(m, threshold) {
 #' 
 #' @examples
 #' m <- matrix(rnorm(10000), nrow=100)
-#' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-#' attribute_graph(bics, m)
+#' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+#' # attribute_graph(bics, m)
 #'
 #' @export
 attribute_graph <- function(bics, m, MARGIN = "column") {
@@ -68,10 +68,10 @@ attribute_graph <- function(bics, m, MARGIN = "column") {
 #' 
 #' @examples
 #' m <- matrix(rnorm(10000), nrow=100)
-#' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-#' fn <- feature_network(bics, m)
-#' attributeConnector(apply_threshold(fn), 
-#'     otherclasses=c(rep(FALSE, 100), rep(TRUE, 100)))
+#' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+#' # fn <- feature_network(bics, m)
+#' # attributeConnector(apply_threshold(fn), 
+#' #     otherclasses=c(rep(FALSE, 100), rep(TRUE, 100)))
 #' 
 #' @export
 attributeConnector <- function(mat, otherclasses, useOther = FALSE) {
@@ -89,8 +89,8 @@ attributeConnector <- function(mat, otherclasses, useOther = FALSE) {
 #' 
 #' @examples
 #' m <- matrix(rnorm(10000), nrow=100)
-#' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-#' attr_overlap(bics, named=FALSE)
+#' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+#' # attr_overlap(bics, named=FALSE)
 #'
 #' @export
 attr_overlap <- function(bics, named) {
@@ -111,8 +111,8 @@ attr_overlap <- function(bics, named) {
 #' 
 #' @examples
 #' m <- matrix(rnorm(10000), nrow=100)
-#' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-#' occurance_matrix(bics, m)
+#' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+#' # occurance_matrix(bics, m)
 #' 
 #' @export
 occurance_matrix <- function(bics, mat) {
@@ -132,8 +132,8 @@ occurance_matrix <- function(bics, mat) {
 #' 
 #' @examples
 #' m <- matrix(rnorm(10000), nrow=100)
-#' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-#' occurance_table(bics, m, threshold=.1)
+#' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+#' # occurance_table(bics, m, threshold=.1)
 #' 
 #' @export
 occurance_table <- function(bics, mat, threshold = 0.) {
@@ -281,9 +281,9 @@ filter_bicluster_size <- function(bics, minRow, minCol) {
 #' 
 #' @examples
 #' m <- matrix(rnorm(10000), nrow=100)
-#' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-#' bn <- bicluster_network(bics, m)
-#' write_graphml(apply_threshold(bn), "testfile.txt")
+#' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+#' # bn <- bicluster_network(bics, m)
+#' # write_graphml(apply_threshold(bn), "testfile.txt")
 #' 
 #' @export
 write_graphml <- function(m, filename, cols) {
@@ -471,7 +471,7 @@ p_overlap_2d_higher <- function(ov_x, ov_y, s1x, s1y, s2x, s2y, mat_x, mat_y) {
 #' @return Number of biclusters.
 #' 
 #' @examples
-#' NoBFBiclusters("PathToBiForceOutput.txt")
+#' # NoBFBiclusters("PathToBiForceOutput.txt")
 #' 
 #' @export
 NoBFBiclusters <- function(filename) {
@@ -485,7 +485,7 @@ NoBFBiclusters <- function(filename) {
 #' and colnames in attribute "column".
 #' 
 #' @examples
-#' getBFCluster("PathToBiForceOutput.txt", cluster=1)
+#' # getBFCluster("PathToBiForceOutput.txt", cluster=1)
 #' 
 #' @export
 getBFCluster <- function(filename, cluster) {
@@ -497,7 +497,7 @@ getBFCluster <- function(filename, cluster) {
 #' @return List of biclusters in the form of \code{\link{getBFCluster}}
 #' 
 #' @examples
-#' getallBFClusters("PathToBiForceOutput.txt")
+#' # getallBFClusters("PathToBiForceOutput.txt")
 #' 
 #' 
 #' @export
@@ -516,7 +516,7 @@ getallBFClusters <- function(filename) {
 #' objects (See \code{\link{validate_bicluster}}).
 #' 
 #' @examples
-#' getQUBIC2biclusters("PathToQUBIC2output.txt")
+#' # Not run: getQUBIC2biclusters("PathToQUBIC2output.txt")
 #' 
 #' @export
 getQUBIC2biclusters <- function(filename, transposed = FALSE) {
@@ -577,12 +577,10 @@ has_names <- function(m) {
 #' @param m A matrix.
 #' @return Throws error, if matrix has no row- and column names.
 #' 
-#' @examples
-#' check_names(matrix(c(1,2,3,4), nrow=2))
-#' 
+#' @examples 
 #' m <- matrix(c(1,2,3,4), nrow=2)
 #' rownames(m) <- c("r1", "r2")
-#' rownames(m) <- c("c1", "c2")
+#' colnames(m) <- c("c1", "c2")
 #' check_names(m)
 #' 
 #' @export
@@ -648,9 +646,9 @@ replace_values_float <- function(mat, threshold, replace_higher = TRUE) {
 #' 
 #' @examples
 #' m <- matrix(rnorm(10000), nrow=100)
-#' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-#' fn <- feature_network(bics, m)
-#' network_edge_strength(apply_threshold(fn))
+#' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+#' # fn <- feature_network(bics, m)
+#' # network_edge_strength(apply_threshold(fn))
 #' 
 #' @export
 network_edge_strength <- function(adjm) {
@@ -680,9 +678,9 @@ network_edge_strength <- function(adjm) {
 #' 
 #' @examples
 #' m <- matrix(rnorm(10000), nrow=100)
-#' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-#' bn <- bicluster_network(bics, m)
-#' network_edge_strength_float(apply_threshold(bn))
+#' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+#' # bn <- bicluster_network(bics, m)
+#' # network_edge_strength_float(apply_threshold(bn))
 #'
 #' @export
 network_edge_strength_float <- function(adjm, steps = 100L, maximum = 0) {
@@ -697,8 +695,8 @@ network_edge_strength_float <- function(adjm, steps = 100L, maximum = 0) {
 #' 
 #' @examples
 #' m <- matrix(rnorm(10000), nrow=100)
-#' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-#' rowhistogram(bics)
+#' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+#' # rowhistogram(bics)
 #' 
 #' @export
 rowhistogram <- function(bic) {
@@ -713,8 +711,8 @@ rowhistogram <- function(bic) {
 #' 
 #' @examples
 #' m <- matrix(rnorm(10000), nrow=100)
-#' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-#' colhistogram(bics)
+#' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+#' # colhistogram(bics)
 #' 
 #' @export
 colhistogram <- function(bic) {
@@ -730,8 +728,8 @@ colhistogram <- function(bic) {
 #' 
 #' @examples
 #' m <- matrix(rnorm(10000), nrow=100)
-#' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-#' algohistogram(bics)
+#' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+#' # algohistogram(bics)
 #' 
 #' @export
 algohistogram <- function(bic) {
@@ -750,8 +748,8 @@ algohistogram <- function(bic) {
 #' 
 #' @examples
 #' m <- matrix(rnorm(10000), nrow=100)
-#' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-#' sample_biclusters(bics, m)
+#' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+#' # sample_biclusters(bics, m)
 #' 
 #' @export
 sample_biclusters <- function(bics, mat) {

@@ -17,7 +17,7 @@ Can be used for e.g. histograms.
 }
 \examples{
 m <- matrix(rnorm(10000), nrow=100)
-bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-rowhistogram(bics)
+# bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+# rowhistogram(bics)
 
 }

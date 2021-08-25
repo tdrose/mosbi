@@ -30,8 +30,8 @@ valid (See \code{\link{validate_bicluster}}.
 Extract a list of bicluster objects from an akmbiclust biclustering object.
 }
 \examples{
+# Function called in
 m <- matrix(rnorm(10000), nrow=100)
-res <- akmbiclust::akmbiclust(m, k=10)
-getAkmbiclustClusters(res, m)
+# Not run: run_akmbiclust(m, k=10)
 
 }

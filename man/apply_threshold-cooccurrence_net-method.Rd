@@ -17,8 +17,8 @@ All values lower than the threshold will be replaced by a 0.
 }
 \examples{
 m <- matrix(rnorm(10000), nrow=100)
-bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-fn <- feature_network(bics, m)
-apply_threshold(fn)
+# bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+# fn <- feature_network(bics, m)
+# apply_threshold(fn)
 
 }

@@ -13,7 +13,7 @@ using namespace std;
 //' @return Number of biclusters.
 //' 
 //' @examples
-//' NoBFBiclusters("PathToBiForceOutput.txt")
+//' # NoBFBiclusters("PathToBiForceOutput.txt")
 //' 
 //' @export
 // [[Rcpp::export]]
@@ -37,7 +37,7 @@ int NoBFBiclusters(String filename){
 //' and colnames in attribute "column".
 //' 
 //' @examples
-//' getBFCluster("PathToBiForceOutput.txt", cluster=1)
+//' # getBFCluster("PathToBiForceOutput.txt", cluster=1)
 //' 
 //' @export
 // [[Rcpp::export]]
@@ -114,7 +114,7 @@ S4 getBFCluster(String filename, int cluster) {
 //' @return List of biclusters in the form of \code{\link{getBFCluster}}
 //' 
 //' @examples
-//' getallBFClusters("PathToBiForceOutput.txt")
+//' # getallBFClusters("PathToBiForceOutput.txt")
 //' 
 //' 
 //' @export

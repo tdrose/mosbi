@@ -50,10 +50,10 @@ Plot a bicluster network with piecharts as nodes.
 }
 \examples{
 m <- matrix(rnorm(10000), nrow=100)
-bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-bn <- bicluster_network(bics, m)
-groups <- ifelse(runif(100)< 0.5, "group1", "group2")
-cols <- c("group1"="blue", "group2"="grey")
-plot_piechart_bicluster_network(bn, bics, groups, cols, named=FALSE)
+# bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+# bn <- bicluster_network(bics, m)
+# groups <- ifelse(runif(100)< 0.5, "group1", "group2")
+# cols <- c("group1"="blue", "group2"="grey")
+# plot_piechart_bicluster_network(bn, bics, groups, cols, named=FALSE)
 
 }

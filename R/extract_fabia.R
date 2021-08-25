@@ -21,8 +21,8 @@ NoFabia <- function(bics) {
 #' 
 #' @examples
 #' m <- matrix(rnorm(10000), nrow=100)
-#' res <- fabia::extractBic(fabia::fabia(m, p=5))
-#' getFabiaClusters(res, m)
+#' # res <- fabia::extractBic(fabia::fabia(m, p=5))
+#' # getFabiaClusters(res, m)
 #' 
 #' 
 #' @export

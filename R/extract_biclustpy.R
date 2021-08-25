@@ -17,7 +17,7 @@ NULL
 #' 
 #' @examples
 #' m <- matrix(rnorm(10000), nrow=100)
-#' getBiclustpyClusters("PathToFileOfBiclustpyResults", m)
+#' # Not run: getBiclustpyClusters("PathToFileOfBiclustpyResults", m)
 #' 
 #' @export
 getBiclustpyClusters <- function(bics, mat,

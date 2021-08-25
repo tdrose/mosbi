@@ -78,7 +78,7 @@ biclusters (the bicluster size distribution is kept).
 }
 \examples{
 m <- matrix(rnorm(10000), nrow=100)
-bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-bicluster_network(bics, m)
+# bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+# bicluster_network(bics, m)
 
 }

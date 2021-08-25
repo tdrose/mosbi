@@ -29,8 +29,8 @@ In the plot each bicluster is colored by the algorithm, that generated it.
 }
 \examples{
 m <- matrix(rnorm(10000), nrow=100)
-bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-bn <- bicluster_network(bics, m)
-plot_algo_network(bn, bics)
+# bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+# bn <- bicluster_network(bics, m)
+# plot_algo_network(bn, bics)
 
 }

@@ -26,6 +26,6 @@ If the algorithm fails to run, an empty list is returned.
 }
 \examples{
 m <- matrix(rnorm(10000), nrow=100)
-run_cc(m)
+# run_cc(m)
 
 }

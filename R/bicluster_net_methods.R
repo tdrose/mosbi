@@ -12,9 +12,9 @@ NULL
 #' 
 #' @examples 
 #' m <- matrix(rnorm(10000), nrow=100)
-#' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-#' bn <- bicluster_network(bics, m)
-#' apply_threshold(bn)
+#' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+#' # bn <- bicluster_network(bics, m)
+#' # apply_threshold(bn)
 #' 
 #' @export
 methods::setGeneric("apply_threshold", function(bic_net) {
@@ -30,9 +30,9 @@ methods::setGeneric("apply_threshold", function(bic_net) {
 #' 
 #' @examples 
 #' m <- matrix(rnorm(10000), nrow=100)
-#' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-#' bn <- bicluster_network(bics, m)
-#' apply_threshold(bn)
+#' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+#' # bn <- bicluster_network(bics, m)
+#' # apply_threshold(bn)
 #' 
 #' @export
 methods::setMethod(
@@ -56,9 +56,9 @@ methods::setMethod(
 #' 
 #' @examples 
 #' m <- matrix(rnorm(10000), nrow=100)
-#' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-#' bn <- bicluster_network(bics, m)
-#' get_adjacency(bn)
+#' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+#' # bn <- bicluster_network(bics, m)
+#' # get_adjacency(bn)
 #' 
 #' @export
 methods::setGeneric("get_adjacency", function(bic_net) {
@@ -74,9 +74,9 @@ methods::setGeneric("get_adjacency", function(bic_net) {
 #' 
 #' @examples 
 #' m <- matrix(rnorm(10000), nrow=100)
-#' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-#' bn <- bicluster_network(bics, m)
-#' get_adjacency(bn)
+#' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+#' # bn <- bicluster_network(bics, m)
+#' # get_adjacency(bn)
 #' 
 #' @export
 methods::setMethod(
@@ -96,9 +96,9 @@ methods::setMethod(
 #' 
 #' @examples 
 #' m <- matrix(rnorm(10000), nrow=100)
-#' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-#' bn <- bicluster_network(bics, m)
-#' get_bic_net_algorithms(bn)
+#' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+#' # bn <- bicluster_network(bics, m)
+#' # get_bic_net_algorithms(bn)
 #' 
 #' @export
 methods::setGeneric("get_bic_net_algorithms", function(bic_net) {
@@ -114,9 +114,9 @@ methods::setGeneric("get_bic_net_algorithms", function(bic_net) {
 #' 
 #' @examples 
 #' m <- matrix(rnorm(10000), nrow=100)
-#' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-#' bn <- bicluster_network(bics, m)
-#' get_bic_net_algorithms(bn)
+#' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+#' # bn <- bicluster_network(bics, m)
+#' # get_bic_net_algorithms(bn)
 #' 
 #' @export
 methods::setMethod(
@@ -136,9 +136,9 @@ methods::setMethod(
 #' 
 #' @examples 
 #' m <- matrix(rnorm(10000), nrow=100)
-#' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-#' fn <- feature_network(bics, m)
-#' apply_threshold(fn)
+#' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+#' # fn <- feature_network(bics, m)
+#' # apply_threshold(fn)
 #' 
 #' @export
 methods::setMethod(
@@ -164,9 +164,9 @@ methods::setMethod(
 #' 
 #' @examples 
 #' m <- matrix(rnorm(10000), nrow=100)
-#' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-#' bn <- bicluster_network(bics, m)
-#' bicluster_net_to_igraph(bn)
+#' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+#' # bn <- bicluster_network(bics, m)
+#' # bicluster_net_to_igraph(bn)
 #' 
 #' @export
 methods::setGeneric("bicluster_net_to_igraph", function(bic_net) {
@@ -184,9 +184,9 @@ methods::setGeneric("bicluster_net_to_igraph", function(bic_net) {
 #' 
 #' @examples 
 #' m <- matrix(rnorm(10000), nrow=100)
-#' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-#' bn <- bicluster_network(bics, m)
-#' bicluster_net_to_igraph(bn)
+#' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+#' # bn <- bicluster_network(bics, m)
+#' # bicluster_net_to_igraph(bn)
 #' 
 #' @export
 methods::setMethod(
@@ -213,9 +213,9 @@ methods::setMethod(
 #' 
 #' @examples 
 #' m <- matrix(rnorm(10000), nrow=100)
-#' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-#' fn <- feature_network(bics, m)
-#' cooccurrence_net_to_igraph(fn)
+#' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+#' # fn <- feature_network(bics, m)
+#' # cooccurrence_net_to_igraph(fn)
 #' 
 #' 
 #' @export
@@ -234,9 +234,9 @@ methods::setGeneric("cooccurrence_net_to_igraph", function(occ_net) {
 #' 
 #' @examples 
 #' m <- matrix(rnorm(10000), nrow=100)
-#' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-#' fn <- feature_network(bics, m)
-#' cooccurrence_net_to_igraph(fn)
+#' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+#' # fn <- feature_network(bics, m)
+#' # cooccurrence_net_to_igraph(fn)
 #' 
 #' @export
 methods::setMethod(
@@ -265,9 +265,9 @@ methods::setMethod(
 #' 
 #' @examples 
 #' m <- matrix(rnorm(10000), nrow=100)
-#' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-#' bn <- bicluster_network(bics, m)
-#' plot(bn)
+#' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+#' # bn <- bicluster_network(bics, m)
+#' # plot(bn)
 #' 
 #' @export
 methods::setMethod(
@@ -290,9 +290,9 @@ methods::setMethod(
 #' 
 #' @examples 
 #' m <- matrix(rnorm(10000), nrow=100)
-#' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-#' fn <- feature_network(bics, m)
-#' plot(fn)
+#' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+#' # fn <- feature_network(bics, m)
+#' # plot(fn)
 #' 
 #' @export
 methods::setMethod(
@@ -337,9 +337,9 @@ get_communities <- function(com) {
 #' 
 #' @examples 
 #' m <- matrix(rnorm(10000), nrow=100)
-#' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-#' bn <- bicluster_network(bics, m)
-#' get_louvain_communities(bn)
+#' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+#' # bn <- bicluster_network(bics, m)
+#' # get_louvain_communities(bn)
 #' 
 #' @export
 methods::setGeneric("get_louvain_communities", function(bic_net,
@@ -364,9 +364,9 @@ methods::setGeneric("get_louvain_communities", function(bic_net,
 #' 
 #' @examples 
 #' m <- matrix(rnorm(10000), nrow=100)
-#' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-#' bn <- bicluster_network(bics, m)
-#' get_louvain_communities(bn)
+#' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+#' # bn <- bicluster_network(bics, m)
+#' # get_louvain_communities(bn)
 #' 
 #' @export
 methods::setMethod("get_louvain_communities",
@@ -429,9 +429,9 @@ methods::setMethod("get_louvain_communities",
 #' 
 #' @examples 
 #' m <- matrix(rnorm(10000), nrow=100)
-#' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-#' fn <- feature_network(bics, m)
-#' get_louvain_communities(fn)
+#' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+#' # fn <- feature_network(bics, m)
+#' # get_louvain_communities(fn)
 #' 
 #' @export
 methods::setMethod("get_louvain_communities",
@@ -481,10 +481,10 @@ extract_biclusters_from_rownames <- function(bic_net) {
 #' 
 #' @examples 
 #' m <- matrix(rnorm(10000), nrow=100)
-#' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-#' bn <- bicluster_network(bics, m)
-#' lc <- get_louvain_communities(bn)
-#' select_biclusters_from_bicluster_network(lc[[1]], bics)
+#' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+#' # bn <- bicluster_network(bics, m)
+#' # lc <- get_louvain_communities(bn)
+#' # select_biclusters_from_bicluster_network(lc[[1]], bics)
 #' 
 #' @export
 methods::setGeneric(
@@ -507,10 +507,10 @@ methods::setGeneric(
 #' 
 #' @examples 
 #' m <- matrix(rnorm(10000), nrow=100)
-#' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-#' bn <- bicluster_network(bics, m)
-#' lc <- get_louvain_communities(bn)
-#' select_biclusters_from_bicluster_network(lc[[1]], bics)
+#' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+#' # bn <- bicluster_network(bics, m)
+#' # lc <- get_louvain_communities(bn)
+#' # select_biclusters_from_bicluster_network(lc[[1]], bics)
 #' 
 #' @export
 methods::setMethod(
@@ -598,11 +598,11 @@ biclusters_pie <- function(bics, types, MARGIN = "column", named=TRUE) {
 #' 
 #' @examples 
 #' m <- matrix(rnorm(10000), nrow=100)
-#' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-#' bn <- bicluster_network(bics, m)
-#' groups <- ifelse(runif(100)< 0.5, "group1", "group2")
-#' cols <- c("group1"="blue", "group2"="grey")
-#' plot_piechart_bicluster_network(bn, bics, groups, cols, named=FALSE)
+#' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+#' # bn <- bicluster_network(bics, m)
+#' # groups <- ifelse(runif(100)< 0.5, "group1", "group2")
+#' # cols <- c("group1"="blue", "group2"="grey")
+#' # plot_piechart_bicluster_network(bn, bics, groups, cols, named=FALSE)
 #' 
 #' @export
 plot_piechart_bicluster_network <- function(bic_net, bics, class_vector,
@@ -648,9 +648,9 @@ plot_piechart_bicluster_network <- function(bic_net, bics, class_vector,
 #' 
 #' @examples 
 #' m <- matrix(rnorm(10000), nrow=100)
-#' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-#' bn <- bicluster_network(bics, m)
-#' plot_algo_network(bn, bics)
+#' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+#' # bn <- bicluster_network(bics, m)
+#' # plot_algo_network(bn, bics)
 #' 
 #' @export
 plot_algo_network <- function(bic_net, bics, new_layout = TRUE, ...) {
@@ -717,11 +717,11 @@ plot_algo_network <- function(bic_net, bics, new_layout = TRUE, ...) {
 #' 
 #' @examples
 #' m <- matrix(rnorm(10000), nrow=100)
-#' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-#' bn <- bicluster_network(bics, m)
-#' nz <- node_size(bics)
-#' plot_algo_network(bn, bics, vertex.size=nz)
-#' plot(bn, vertex.size=node_size(bics, offset=.1, base_size=15))
+#' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+#' # bn <- bicluster_network(bics, m)
+#' # nz <- node_size(bics)
+#' # plot_algo_network(bn, bics, vertex.size=nz)
+#' # plot(bn, vertex.size=node_size(bics, offset=.1, base_size=15))
 #' 
 #' @export
 node_size <- function(bics, base_size = 10, offset = .2, MARGIN = "column") {

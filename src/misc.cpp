@@ -23,12 +23,10 @@ bool has_names(NumericMatrix m ){
 //' @param m A matrix.
 //' @return Throws error, if matrix has no row- and column names.
 //' 
-//' @examples
-//' check_names(matrix(c(1,2,3,4), nrow=2))
-//' 
+//' @examples 
 //' m <- matrix(c(1,2,3,4), nrow=2)
 //' rownames(m) <- c("r1", "r2")
-//' rownames(m) <- c("c1", "c2")
+//' colnames(m) <- c("c1", "c2")
 //' check_names(m)
 //' 
 //' @export

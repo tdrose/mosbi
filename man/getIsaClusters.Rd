@@ -29,8 +29,8 @@ to be valid (See \code{\link{validate_bicluster}}.
 Extract a list of bicluster objects from an isa2 biclustering object.
 }
 \examples{
+# Function part of:
 m <- matrix(rnorm(10000), nrow=100)
-res <- isa2::isa(m)
-getIsaClusters(res, m)
+# Not run: run_isa(m)
 
 }

@@ -42,7 +42,7 @@ Extract a list of bicluster objects from a biclust object.
 }
 \examples{
 m <- matrix(rnorm(10000), nrow=100)
-res <- biclust::biclust(m, method = biclust::BCBimax())
-getBiclustClusters(res, m)
+# res <- biclust::biclust(m, method = biclust::BCBimax())
+# getBiclustClusters(res, m)
 
 }

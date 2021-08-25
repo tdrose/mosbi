@@ -25,8 +25,8 @@ NoBiclust <- function(bics) {
 #' 
 #' @examples
 #' m <- matrix(rnorm(10000), nrow=100)
-#' res <- biclust::biclust(m, method = biclust::BCBimax())
-#' getBiclustClusters(res, m)
+#' # res <- biclust::biclust(m, method = biclust::BCBimax())
+#' # getBiclustClusters(res, m)
 #' 
 #' @export
 getBiclustClusters <- function(bics, mat, method = "biclust",

@@ -163,8 +163,8 @@ org_similarity <- function(MARGIN, bics, metric, prob_scale, mat, prl){
 #' 
 #' @examples 
 #' m <- matrix(rnorm(10000), nrow=100)
-#' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-#' bicluster_network(bics, m)
+#' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+#' # bicluster_network(bics, m)
 #'
 #' @export
 bicluster_network <- function(bics, mat, n_randomizations = 5, MARGIN = "both",
@@ -269,8 +269,8 @@ random_f_similarities <- function(bics, mat, n_randomizations, rr, rc, cc, w,
 #' 
 #' @examples 
 #' m <- matrix(rnorm(10000), nrow=100)
-#' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-#' feature_network(bics, m)
+#' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+#' # feature_network(bics, m)
 #'
 #' @export
 feature_network <- function(bics, mat, n_randomizations = 5, n_steps = 100,

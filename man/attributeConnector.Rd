@@ -31,9 +31,9 @@ rows (columns) to columns (rows) of a specific class/category.
 }
 \examples{
 m <- matrix(rnorm(10000), nrow=100)
-bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-fn <- feature_network(bics, m)
-attributeConnector(apply_threshold(fn), 
-    otherclasses=c(rep(FALSE, 100), rep(TRUE, 100)))
+# bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+# fn <- feature_network(bics, m)
+# attributeConnector(apply_threshold(fn), 
+#     otherclasses=c(rep(FALSE, 100), rep(TRUE, 100)))
 
 }

@@ -12,8 +12,8 @@ using namespace Rcpp;
 //' 
 //' @examples
 //' m <- matrix(rnorm(10000), nrow=100)
-//' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-//' rowhistogram(bics)
+//' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+//' # rowhistogram(bics)
 //' 
 //' @export
 // [[Rcpp::export]]
@@ -27,8 +27,8 @@ NumericVector rowhistogram(List bic);
 //' 
 //' @examples
 //' m <- matrix(rnorm(10000), nrow=100)
-//' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-//' colhistogram(bics)
+//' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+//' # colhistogram(bics)
 //' 
 //' @export
 // [[Rcpp::export]]
@@ -43,8 +43,8 @@ NumericVector colhistogram(List bic);
 //' 
 //' @examples
 //' m <- matrix(rnorm(10000), nrow=100)
-//' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-//' algohistogram(bics)
+//' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+//' # algohistogram(bics)
 //' 
 //' @export
 // [[Rcpp::export]]
@@ -62,8 +62,8 @@ CharacterVector algohistogram(List bic);
 //' 
 //' @examples
 //' m <- matrix(rnorm(10000), nrow=100)
-//' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-//' sample_biclusters(bics, m)
+//' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+//' # sample_biclusters(bics, m)
 //' 
 //' @export
 // [[Rcpp::export]]

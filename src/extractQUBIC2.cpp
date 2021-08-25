@@ -80,7 +80,7 @@ IntegerVector extract_cond(std::string &line, int &mode){
 //' objects (See \code{\link{validate_bicluster}}).
 //' 
 //' @examples
-//' getQUBIC2biclusters("PathToQUBIC2output.txt")
+//' # Not run: getQUBIC2biclusters("PathToQUBIC2output.txt")
 //' 
 //' @export
 // [[Rcpp::export]]

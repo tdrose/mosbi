@@ -16,7 +16,7 @@ List of biclusters in the form of \code{\link{getBFCluster}}
 Get all biclusters from a Bi-Force output file.
 }
 \examples{
-getallBFClusters("PathToBiForceOutput.txt")
+# getallBFClusters("PathToBiForceOutput.txt")
 
 
 }

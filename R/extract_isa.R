@@ -20,9 +20,9 @@ NoIsa <- function(bics) {
 #' to be valid (See \code{\link{validate_bicluster}}.
 #' 
 #' @examples
+#' # Function part of:
 #' m <- matrix(rnorm(10000), nrow=100)
-#' res <- isa2::isa(m)
-#' getIsaClusters(res, m)
+#' # Not run: run_isa(m)
 #' 
 #' @export
 getIsaClusters <- function(bics, mat,

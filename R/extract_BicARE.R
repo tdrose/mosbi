@@ -22,8 +22,8 @@ NoBicARE <- function(bics) {
 #' @examples
 #' # Note that BicARE packackage is not included in the mosbi package
 #' m <- matrix(rnorm(10000), nrow=100)
-#' res # Return of  BicARE::FLOC(m)
-#' getBicAREbiclusters(res, m)
+#' # res <- BicARE::FLOC(m)
+#' # getBicAREbiclusters(res, m)
 #' 
 #' @export
 getBicAREbiclusters <- function(bics, mat,

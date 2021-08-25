@@ -14,8 +14,8 @@ using namespace Rcpp;
 //' 
 //' @examples
 //' m <- matrix(rnorm(10000), nrow=100)
-//' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-//' attr_overlap(bics, named=FALSE)
+//' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+//' # attr_overlap(bics, named=FALSE)
 //'
 //' @export
 // [[Rcpp::export]]
@@ -112,8 +112,8 @@ DataFrame attr_overlap(List bics, bool named){
 //' 
 //' @examples
 //' m <- matrix(rnorm(10000), nrow=100)
-//' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-//' occurance_matrix(bics, m)
+//' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+//' # occurance_matrix(bics, m)
 //' 
 //' @export
 // [[Rcpp::export]]
@@ -154,8 +154,8 @@ NumericMatrix occurance_matrix(const List bics, const NumericMatrix mat){
 //' 
 //' @examples
 //' m <- matrix(rnorm(10000), nrow=100)
-//' bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-//' occurance_table(bics, m, threshold=.1)
+//' # bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+//' # occurance_table(bics, m, threshold=.1)
 //' 
 //' @export
 // [[Rcpp::export]]

@@ -29,7 +29,7 @@ column element is present.
 }
 \examples{
 m <- matrix(rnorm(10000), nrow=100)
-bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
-attribute_graph(bics, m)
+# bics <- c(run_fabia(m), run_isa(m), run_plaid(m))
+# attribute_graph(bics, m)
 
 }

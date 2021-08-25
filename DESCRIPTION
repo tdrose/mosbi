@@ -1,11 +1,14 @@
 Package: mosbi
 Title: Molecular Signature identification using Biclustering
-Version: 0.99.0
+Version: 0.99.1
 Authors@R: c(
   person("Tim Daniel", "Rose", email="tim.rose@wzw.tum.de", 
   role = c("cre", "aut")),
   person("Josch Konstantin", "Pauling", 
   email="josch.pauling@wzw.tum.de", role = "aut"))
+Author: Tim Daniel Rose [cre, aut]
+  Josch Konstantin Pauling [aut]
+Maintainer: Tim Daniel Rose <tim.rose@wzw.tum.de>
 Description: This package is a implementation of biclustering ensemble 
   method MoSBi (Molecular signature Identification from Biclustering).
   MoSBi provides standardized interfaces for biclustering results and 
@@ -38,15 +41,15 @@ Imports:
     xml2,
     methods,
     igraph,
-    RcppParallel,
-    RColorBrewer
-Suggests:
     fabia,
+    RcppParallel,
     biclust,
     isa2,
     QUBIC,
     runibic,
     akmbiclust,
+    RColorBrewer
+Suggests:
     knitr,
     rmarkdown,
     RUnit, 

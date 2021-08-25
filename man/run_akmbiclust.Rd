@@ -26,7 +26,8 @@ objects compatible with this package.
 If the algorithm fails to run, an empty list is returned.
 }
 \examples{
+set.seed(10)
 m <- matrix(rnorm(10000), nrow=100)
-run_akmbiclust(m, k=10)
+# Not run: run_akmbiclust(m, k=10)
 
 }
