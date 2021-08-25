@@ -6,19 +6,6 @@
 \usage{
 get_runibic_function()
 }
-\arguments{
-\item{data_matrix}{A numeric matrix.}
-
-\item{minRow}{Same parameters as in \link{filter_bicluster_size}.}
-
-\item{minCol}{Same parameters as in \link{filter_bicluster_size}.}
-
-\item{...}{Other parameters forwarded to the \link[runibic]{BCUnibic}
-function.}
-}
-\value{
-a list of \link{bicluster} objects.
-}
 \description{
 The function executes the \link[runibic]{BCUnibic} biclustering algorithm,
 returning a list of biclusters converted into bicluster objects
@@ -28,6 +15,18 @@ If the algorithm fails to run, an empty list is returned.
 \details{
 Due to inavailability of runibic on windows, 
 execute the result of the function in R to run the UniBic in R.
+
+
+# @param data_matrix A numeric matrix.
+
+# @param minRow Same parameters as in \link{filter_bicluster_size}.
+
+# @param minCol Same parameters as in \link{filter_bicluster_size}.
+
+# @param ... Other parameters forwarded to the \link[runibic]{BCUnibic}
+function.
+
+# @return a list of \link{bicluster} objects.
 }
 \examples{
 m <- matrix(seq(1:16), nrow=4)

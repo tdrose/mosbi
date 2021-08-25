@@ -417,12 +417,16 @@ run_xmotifs <- function(data_matrix, minRow = 2, minCol = 2, ...) {
 #' execute the result of the function in R to run the UniBic in R.
 #' 
 #'
-#' @param data_matrix A numeric matrix.
-#' @param minRow Same parameters as in \link{filter_bicluster_size}.
-#' @param minCol Same parameters as in \link{filter_bicluster_size}.
-#' @param ... Other parameters forwarded to the \link[runibic]{BCUnibic}
+#' # @param data_matrix A numeric matrix.
+#' 
+#' # @param minRow Same parameters as in \link{filter_bicluster_size}.
+#' 
+#' # @param minCol Same parameters as in \link{filter_bicluster_size}.
+#' 
+#' # @param ... Other parameters forwarded to the \link[runibic]{BCUnibic}
 #' function.
-#' @return a list of \link{bicluster} objects.
+#' 
+#' # @return a list of \link{bicluster} objects.
 #' 
 #' @examples
 #' m <- matrix(seq(1:16), nrow=4)
