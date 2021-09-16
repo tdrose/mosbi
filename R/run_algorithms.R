@@ -414,16 +414,16 @@ run_xmotifs <- function(data_matrix, minRow = 2, minCol = 2, ...) {
 #' If the algorithm fails to run, an empty list is returned.
 #' 
 #'
-#' # @param data_matrix A numeric matrix.
+#' @param data_matrix A numeric matrix.
 #' 
-#' # @param minRow Same parameters as in \link{filter_bicluster_size}.
+#' @param minRow Same parameters as in \link{filter_bicluster_size}.
 #' 
-#' # @param minCol Same parameters as in \link{filter_bicluster_size}.
+#' @param minCol Same parameters as in \link{filter_bicluster_size}.
 #' 
-#' # @param ... Other parameters forwarded to the runibic::BCUnibic function.
+#' @param ... Other parameters forwarded to the runibic::BCUnibic function.
 #' function.
 #' 
-#' # @return a list of \link{bicluster} objects.
+#' @return a list of \link{bicluster} objects.
 #' 
 #' @return Function as a string, which can be executed.
 #' @examples
