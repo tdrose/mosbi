@@ -1,6 +1,6 @@
 Package: mosbi
 Title: Molecular Signature identification using Biclustering
-Version: 0.99.9
+Version: 0.99.10
 Authors@R: c(
   person("Tim Daniel", "Rose", email="tim.rose@wzw.tum.de", 
   role = c("cre", "aut")),
