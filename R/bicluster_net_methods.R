@@ -731,7 +731,7 @@ plot_algo_network <- function(bic_net, bics, new_layout = TRUE, ...) {
 #' @param base_size Is multiplied with the atan result for the node size
 #' @param offset Offset for the atan calculation. Has to be > 0.
 #' Smaller values result in higher differences of node sizes.
-#' @param MARGIN "Column", "row" or "both" are taken into account
+#' @param MARGIN "column", "row" or "both" are taken into account
 #' for the size of a bicluster bicluster
 #' @return Vector of node sizes as floats.
 #' 

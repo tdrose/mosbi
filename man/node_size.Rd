@@ -14,7 +14,7 @@ node_size(bics, base_size = 10, offset = 0.2, MARGIN = "column")
 \item{offset}{Offset for the atan calculation. Has to be > 0.
 Smaller values result in higher differences of node sizes.}
 
-\item{MARGIN}{"Column", "row" or "both" are taken into account
+\item{MARGIN}{"column", "row" or "both" are taken into account
 for the size of a bicluster bicluster}
 }
 \value{

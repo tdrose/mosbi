@@ -413,9 +413,6 @@ run_xmotifs <- function(data_matrix, minRow = 2, minCol = 2, ...) {
 #' compatible with this package.
 #' If the algorithm fails to run, an empty list is returned.
 #' 
-#' Due to inavailability of runibic on windows, 
-#' execute the result of the function in R to run the UniBic in R.
-#' 
 #'
 #' # @param data_matrix A numeric matrix.
 #' 
@@ -435,32 +432,27 @@ run_xmotifs <- function(data_matrix, minRow = 2, minCol = 2, ...) {
 #' # run_unibic(m, nbic=10)
 #'
 #' @export
-get_runibic_function <- function(){
-    cat('Copy and execute the following function in R, to get the run_unibic function:
-    
-    run_unibic <- function(data_matrix, minRow = 2, minCol = 2, ...) {
-        if (!requireNamespace("runibic", quietly = TRUE)) {
-            stop("Package \"runibic\" needed for this function to work.
+run_unibic <- function(data_matrix, minRow = 2, minCol = 2, ...) {
+    if (!requireNamespace("runibic", quietly = TRUE)) {
+        stop("Package \"runibic\" needed for this function to work.
             Please install it.",
-                call. = FALSE
-            )
-        }
-        out <- tryCatch(filter_bicluster_size(
-            get_biclusters(runibic::BCUnibic(data_matrix, ...),
-                data_matrix,
-                method = "biclust-unibic"
-            ),
-            minRow, minCol
-        ),
-        error = function(e) {
-            print("UniBic failed to run.")
-            return(list())
-        }
+             call. = FALSE
         )
+    }
+    out <- tryCatch(filter_bicluster_size(
+        get_biclusters(runibic::BCUnibic(data_matrix, ...),
+                       data_matrix,
+                       method = "biclust-unibic"
+        ),
+        minRow, minCol
+    ),
+    error = function(e) {
+        print("UniBic failed to run.")
+        return(list())
+    }
+    )
     
-        return(out)}')
-}
-
+    return(out)}
 
 #' Run the akmbiclust biclustering algorithm
 #'
