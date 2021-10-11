@@ -26,9 +26,8 @@ NULL
 run_fabia <- function(data_matrix, minRow = 2, minCol = 2, thresZ = 0.5,
                     thresL = NULL, ...) {
     if (!requireNamespace("fabia", quietly = TRUE)) {
-        stop("Package \"fabia\" needed for this function to work.
-        Please install it.",
-            call. = FALSE
+        stop("Package \"fabia\" not available. 
+        It is reauired for this function. Please install it."
         )
     }
     out <- tryCatch(filter_bicluster_size(
@@ -43,7 +42,7 @@ run_fabia <- function(data_matrix, minRow = 2, minCol = 2, thresZ = 0.5,
         minRow, minCol
     ),
     error = function(e) {
-        print("Fabia failed to run.")
+        warning("Fabia algorithm execution did not succeed.")
         return(list())
     }
     )
@@ -72,9 +71,8 @@ run_fabia <- function(data_matrix, minRow = 2, minCol = 2, thresZ = 0.5,
 #' @export
 run_isa <- function(data_matrix, minRow = 2, minCol = 2, ...) {
     if (!requireNamespace("isa2", quietly = TRUE)) {
-        stop("Package \"isa2\" needed for this function to work.
-        Please install it.",
-            call. = FALSE
+        stop("Package \"isa2\" not available. 
+        It is required for this function. Please install it."
         )
     }
     out <- tryCatch(filter_bicluster_size(
@@ -85,7 +83,7 @@ run_isa <- function(data_matrix, minRow = 2, minCol = 2, ...) {
         minRow, minCol
     ),
     error = function(e) {
-        print("isa failed to run.")
+        warning("isa algorithm execution did not succeed.")
         return(list())
     }
     )
@@ -114,15 +112,13 @@ run_isa <- function(data_matrix, minRow = 2, minCol = 2, ...) {
 #' @export
 run_qubic <- function(data_matrix, minRow = 2, minCol = 2, ...) {
     if (!requireNamespace("QUBIC", quietly = TRUE)) {
-        stop("Package \"QUBIC\" needed for this function to work.
-        Please install it.",
-            call. = FALSE
+        stop("Package \"QUBIC\" not available. 
+        It is required for this function. Please install it."
         )
     }
     if (!requireNamespace("biclust", quietly = TRUE)) {
-        stop("Package \"biclust\" needed for this function to work.
-        Please install it.",
-            call. = FALSE
+        stop("Package \"biclust\" not available. 
+        It is required for this function. Please install it."
         )
     }
     out <- tryCatch(filter_bicluster_size(
@@ -134,7 +130,7 @@ run_qubic <- function(data_matrix, minRow = 2, minCol = 2, ...) {
         minRow, minCol
     ),
     error = function(e) {
-        print("qubic failed to run.")
+        warning("qubic algorithm execution did not succeed.")
         return(list())
     }
     )
@@ -164,9 +160,8 @@ run_qubic <- function(data_matrix, minRow = 2, minCol = 2, ...) {
 #' @export
 run_plaid <- function(data_matrix, minRow = 2, minCol = 2, ...) {
     if (!requireNamespace("biclust", quietly = TRUE)) {
-        stop("Package \"biclust\" needed for this function to work.
-        Please install it.",
-            call. = FALSE
+        stop("Package \"biclust\" not available. 
+        It is required for this function. Please install it."
         )
     }
     out <- tryCatch(filter_bicluster_size(
@@ -178,7 +173,7 @@ run_plaid <- function(data_matrix, minRow = 2, minCol = 2, ...) {
         minRow, minCol
     ),
     error = function(e) {
-        print("Plaid failed to run.")
+        warning("Plaid algorithm execution did not succeed.")
         return(list())
     }
     )
@@ -208,9 +203,8 @@ run_plaid <- function(data_matrix, minRow = 2, minCol = 2, ...) {
 #' @export
 run_bimax <- function(data_matrix, minRow = 2, minCol = 2, ...) {
     if (!requireNamespace("biclust", quietly = TRUE)) {
-        stop("Package \"biclust\" needed for this function to work.
-        Please install it.",
-            call. = FALSE
+        stop("Package \"biclust\" not available. 
+        It is required for this function. Please install it."
         )
     }
     out <- tryCatch(filter_bicluster_size(
@@ -222,7 +216,7 @@ run_bimax <- function(data_matrix, minRow = 2, minCol = 2, ...) {
         minRow, minCol
     ),
     error = function(e) {
-        print("Bimax failed to run.")
+        warning("Bimax algorithm execution did not succeed.")
         return(list())
     }
     )
@@ -252,9 +246,8 @@ run_bimax <- function(data_matrix, minRow = 2, minCol = 2, ...) {
 #' @export
 run_spectral <- function(data_matrix, minRow = 2, minCol = 2, ...) {
     if (!requireNamespace("biclust", quietly = TRUE)) {
-        stop("Package \"biclust\" needed for this function to work.
-        Please install it.",
-            call. = FALSE
+        stop("Package \"biclust\" not available. 
+        It is required for this function. Please install it."
         )
     }
     out <- tryCatch(filter_bicluster_size(
@@ -266,7 +259,7 @@ run_spectral <- function(data_matrix, minRow = 2, minCol = 2, ...) {
         minRow, minCol
     ),
     error = function(e) {
-        print("Spectral failed to run.")
+        warning("Spectral algorithm execution did not succeed.")
         return(list())
     }
     )
@@ -296,9 +289,8 @@ run_spectral <- function(data_matrix, minRow = 2, minCol = 2, ...) {
 #' @export
 run_quest <- function(data_matrix, minRow = 2, minCol = 2, ...) {
     if (!requireNamespace("biclust", quietly = TRUE)) {
-        stop("Package \"biclust\" needed for this function to work.
-        Please install it.",
-            call. = FALSE
+        stop("Package \"biclust\" not available. 
+        It is required for this function. Please install it."
         )
     }
     out <- tryCatch(filter_bicluster_size(
@@ -310,7 +302,7 @@ run_quest <- function(data_matrix, minRow = 2, minCol = 2, ...) {
         minRow, minCol
     ),
     error = function(e) {
-        print("Quest failed to run.")
+        warning("Quest algorithm execution did not succeed.")
         return(list())
     }
     )
@@ -339,9 +331,8 @@ run_quest <- function(data_matrix, minRow = 2, minCol = 2, ...) {
 #' @export
 run_cc <- function(data_matrix, minRow = 2, minCol = 2, ...) {
     if (!requireNamespace("biclust", quietly = TRUE)) {
-        stop("Package \"biclust\" needed for this function to work.
-        Please install it.",
-            call. = FALSE
+        stop("Package \"biclust\" not available. 
+        It is required for this function. Please install it."
         )
     }
     out <- tryCatch(filter_bicluster_size(
@@ -354,7 +345,7 @@ run_cc <- function(data_matrix, minRow = 2, minCol = 2, ...) {
     ),
     error =
         function(e) {
-            print("CC failed to run.")
+            warning("CC algorithm execution did not succeed.")
             return(list())
         }
     )
@@ -384,8 +375,8 @@ run_cc <- function(data_matrix, minRow = 2, minCol = 2, ...) {
 #' @export
 run_xmotifs <- function(data_matrix, minRow = 2, minCol = 2, ...) {
     if (!requireNamespace("biclust", quietly = TRUE)) {
-        stop("Package \"biclust\" needed for this function to work.
-        Please install it.",
+        stop("Package \"biclust\" not available. 
+        It is reauired for this function. Please install it.",
             call. = FALSE
         )
     }
@@ -398,7 +389,7 @@ run_xmotifs <- function(data_matrix, minRow = 2, minCol = 2, ...) {
         minRow, minCol
     ),
     error = function(e) {
-        print("Xmotifs failed to run.")
+        warning("Xmotifs algorithm execution did not succeed.")
         return(list())
     }
     )
@@ -434,20 +425,19 @@ run_xmotifs <- function(data_matrix, minRow = 2, minCol = 2, ...) {
 #' @export
 run_unibic <- function(data_matrix, minRow = 2, minCol = 2, ...) {
     if (!requireNamespace("runibic", quietly = TRUE)) {
-        stop("Package \"runibic\" needed for this function to work.
-            Please install it.",
-             call. = FALSE
+        stop("Package \"runibic\" not available. 
+        It is required for this function. Please install it."
         )
     }
     out <- tryCatch(filter_bicluster_size(
         get_biclusters(runibic::BCUnibic(data_matrix, ...),
-                       data_matrix,
-                       method = "biclust-unibic"
+                        data_matrix,
+                        method = "biclust-unibic"
         ),
         minRow, minCol
     ),
     error = function(e) {
-        print("UniBic failed to run.")
+        warning("UniBic algorithm execution did not succeed.")
         return(list())
     }
     )
@@ -477,8 +467,8 @@ run_unibic <- function(data_matrix, minRow = 2, minCol = 2, ...) {
 #' @export
 run_akmbiclust <- function(data_matrix, minRow = 2, minCol = 2, ...) {
     if (!requireNamespace("akmbiclust", quietly = TRUE)) {
-        stop("Package \"akmbiclust\" needed for this function to work.
-        Please install it.",
+        stop("Package \"akmbiclust\" not available. 
+        It is required for this function. Please install it.",
             call. = FALSE
         )
     }
@@ -491,7 +481,7 @@ run_akmbiclust <- function(data_matrix, minRow = 2, minCol = 2, ...) {
         minRow, minCol
     ),
     error = function(e) {
-        print("akmbiclust failed to run.")
+        warning("akmbiclust algorithm execution did not succeed.")
         return(list())
     }
     )

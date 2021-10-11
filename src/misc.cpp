@@ -33,6 +33,6 @@ bool has_names(NumericMatrix m ){
 // [[Rcpp::export]]
 void check_names (NumericMatrix m){
   if (!has_names(m)){
-    stop("Matrix requires row- and colnames.");
+    stop("Matrix m requires row- and colnames.");
   }
 }

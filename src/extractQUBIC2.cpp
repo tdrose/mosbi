@@ -96,7 +96,9 @@ List getQUBIC2biclusters(String filename, bool transposed=false){
   
   
   infile.open(filename);
-  if(!infile.is_open()) stop("Cannot read file.");
+  if(!infile.is_open()){
+    stop("File could not be opened. Check that path is correct.");
+  }
   
   while(getline(infile, tmp_line)){
     

@@ -37,7 +37,7 @@ DataFrame attributeConnector(
     bool useOther=false){
   
   if(mat.nrow()!=mat.ncol()){
-    stop("Matrix must be quadratic.");
+    stop("Matrix mat must be quadratic. (Same number of rows and columns)");
   }
   
   

@@ -2,7 +2,8 @@
 title: "Example workflow"
 author: "Tim Daniel Rose"
 date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
+output: 
+  BiocStyle::html_document
 vignette: >
   %\VignetteIndexEntry{example-workflow}
   %\VignetteEngine{knitr::rmarkdown}
@@ -293,3 +294,10 @@ ensemble_bicluster_list <- mosbi::ensemble_biclusters(coms, all_bics,
     col_threshold = .1
 )
 ```
+
+
+# Session Info
+```{r}
+sessionInfo()
+```
+

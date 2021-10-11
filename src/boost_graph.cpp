@@ -17,7 +17,7 @@ void generate_boost_graph(mygraph &g,
   
   // Matrix must be symmetric
   if(m.nrow()!=m.ncol()){
-    stop("Input matrix must be symmetric");
+    stop("matrix m must be symmetric");
   }
   
   // col vector must fit to number of nodes

@@ -3,10 +3,10 @@ NULL
 
 is_biclust <- function(method){
     return((method == "biclust") | (method == "biclust-bimax") |
-               (method == "biclust-cc") |
-               (method == "biclust-plaid") | (method == "biclust-quest") |
-               (method == "biclust-qubic") | (method == "biclust-spectral") |
-               (method == "biclust-xmotifs") | (method == "biclust-unibic"))
+            (method == "biclust-cc") |
+            (method == "biclust-plaid") | (method == "biclust-quest") |
+            (method == "biclust-qubic") | (method == "biclust-spectral") |
+            (method == "biclust-xmotifs") | (method == "biclust-unibic"))
 }
 
 extract_bf <- function(bics, mat, method, transposed, filterfun, ...){

@@ -2,7 +2,8 @@
 title: "Similarity Metrics Evaluation"
 author: "Tim Daniel Rose"
 date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
+output: 
+  BiocStyle::html_document
 vignette: >
   %\VignetteIndexEntry{similarity-metrics-evaluation}
   %\VignetteEngine{knitr::rmarkdown}
@@ -122,4 +123,10 @@ legend(
     col = c("red", "blue", "green", "orange"),
     lty = 1, cex = 0.8, title = "Similarity metrics"
 )
+```
+
+
+# Session Info
+```{r}
+sessionInfo()
 ```

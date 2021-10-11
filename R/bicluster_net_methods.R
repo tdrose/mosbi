@@ -543,7 +543,7 @@ check_pie <- function(bic_pie) {
     is_all_zero <- function(x) all(x == 0)
 
     if (any(vapply(bic_pie, is_all_zero, FALSE))) {
-        stop("In each bicluster at least one member must have one
+        stop("Each bicluster needs at least one member with a
     class affiliation.")
     }
 }
@@ -568,8 +568,8 @@ bicluster_pie <- function(bic, types, MARGIN = "column", named = TRUE) {
     names(types) <- tn
     mapped <- types[attrs]
     if (any(is.na(mapped))) {
-        stop("Every element in a bicluster must have an entry
-            in the class_vector")
+        stop("Problem in class_vector. Every element in a bicluster must have 
+            an entry in the class_vector.")
     }
     num_attrs <- sort(unique(types))
     out <- rep(0, length(num_attrs))
@@ -586,7 +586,7 @@ bicluster_pie <- function(bic, types, MARGIN = "column", named = TRUE) {
 
 biclusters_pie <- function(bics, types, MARGIN = "column", named=TRUE) {
     tmp <- lapply(bics, bicluster_pie, types = types, MARGIN = MARGIN, 
-                  named=named)
+                    named=named)
     check_pie(tmp)
     return(tmp)
 }

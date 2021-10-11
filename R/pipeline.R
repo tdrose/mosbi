@@ -83,9 +83,9 @@ random_similarities <- function(n_randomizations, bics, mat, prob_scale,
             rand_sim <- (rand_sim_r + rand_sim_c) / 2
         } else {
             rand_sim <- similarity_matrix(tmp_sample, MARGIN, metric,
-                                          prob_scale = prob_scale,
-                                          mat_row = nrow(mat),
-                                          mat_col = ncol(mat), prl = prl)}
+                                            prob_scale = prob_scale,
+                                            mat_row = nrow(mat),
+                                            mat_col = ncol(mat), prl = prl)}
         tmp <- network_edge_strength_float(rand_sim, n_steps, max_mat)
         tmp_l[[i]] <- tmp
         tmp_l[[i]][, 2] <- tmp_l[[i]][, 2] + 1
@@ -99,19 +99,20 @@ org_similarity <- function(MARGIN, bics, metric, prob_scale, mat, prl){
     org_sim <- 0
     if (MARGIN == "mean") {
         org_sim_r <- similarity_matrix(bics,
-                                       MARGIN = "row", metric,
-                                       prob_scale = prob_scale,
-                                       mat_row = nrow(mat), mat_col = ncol(mat))
+                                        MARGIN = "row", metric,
+                                        prob_scale = prob_scale,
+                                        mat_row = nrow(mat), mat_col = ncol(mat))
         org_sim_c <- similarity_matrix(bics,
-                                       MARGIN = "column",
-                                       metric, prob_scale = prob_scale,
-                                       mat_row = nrow(mat), mat_col = ncol(mat))
+                                        MARGIN = "column",
+                                        metric, prob_scale = prob_scale,
+                                        mat_row = nrow(mat), mat_col = ncol(mat))
         org_sim <- (org_sim_r + org_sim_c) / 2
     } else {
         org_sim <- similarity_matrix(bics, MARGIN, metric,
-                                     prob_scale = prob_scale,
-                                     mat_row = nrow(mat), mat_col = ncol(mat),
-                                     prl = prl)}
+                                        prob_scale = prob_scale,
+                                        mat_row = nrow(mat), 
+                                        mat_col = ncol(mat),
+                                        prl = prl)}
     
     return(org_sim)
 }
@@ -174,7 +175,7 @@ bicluster_network <- function(bics, mat, n_randomizations = 5, MARGIN = "both",
                             sn_ratio = TRUE,
                             error_threshold = .05, return_plot_data = FALSE,
                             prob_scale = FALSE, prl = FALSE) {
-    if (n_randomizations < 1) { stop("n_randomization must be >= 1.")}
+    if (n_randomizations < 1) { stop("Parameter n_randomization must be >= 1.")}
     # Original similarity
     org_sim <- org_similarity(MARGIN, bics, metric, prob_scale, mat, prl)
     org_edges <- network_edge_strength_float(org_sim, n_steps)
@@ -182,7 +183,7 @@ bicluster_network <- function(bics, mat, n_randomizations = 5, MARGIN = "both",
     steps <- dim(org_edges)[1]
     # Random similarities
     tmp = random_similarities(n_randomizations, bics, mat, prob_scale, 
-                              metric, prl, max_mat, MARGIN, n_steps)
+                                metric, prl, max_mat, MARGIN, n_steps)
     tmp_l = tmp[["tmp_l"]]
     tmp_v = tmp[["tmp_v"]]
     sample_mat <- matrix(tmp_v, nrow = steps)
@@ -223,15 +224,15 @@ bicluster_network <- function(bics, mat, n_randomizations = 5, MARGIN = "both",
 
 
 random_f_similarities <- function(bics, mat, n_randomizations, rr, rc, cc, w, 
-                                  n_steps, max_mat){
+                                    n_steps, max_mat){
     tmp_l <- list()
     tmp_v <- c()
     # Random similarities
     for (i in seq(1, n_randomizations)) {
         tmp_sample <- sample_biclusters(bics, mat)
         rand_sim <- full_graph(tmp_sample, mat,
-                               rr_weight = rr, rc_weight = rc,
-                               cc_weight = cc, weighting = w)
+                                rr_weight = rr, rc_weight = rc,
+                                cc_weight = cc, weighting = w)
         tmp <- network_edge_strength_float(rand_sim, n_steps, max_mat)
         tmp_l[[i]] <- tmp
         tmp_v <- c(tmp_v, tmp[, 2])
@@ -281,7 +282,7 @@ feature_network <- function(bics, mat, n_randomizations = 5, n_steps = 100,
                             error_threshold = .05,
                             return_plot_data = FALSE, rr = 1.,
                             rc = 1., cc = 1., w = 0) {
-    if (n_randomizations < 1) {stop("n_randomization must be >= 1.")}
+    if (n_randomizations < 1) {stop("Parameter n_randomization must be >= 1.")}
     org_sim <- 0
     rand_sim <- 0
     org_sim <- full_graph(bics, mat, rr_weight = rr,
