@@ -18,9 +18,9 @@ knitr::opts_chunk$set(
 ```
 
 This vignette shows an example workflow for ensemble biclustering analysis 
-with the `metabiclustering` package.
+with the `mosbi` package.
 Every function of the package has a help page with a detailed documentation. 
-To access these type `help(package=metabiclustering)` in the `R` console.
+To access these type `help(package=mosbi)` in the `R` console.
 
 ### Load packages
 
