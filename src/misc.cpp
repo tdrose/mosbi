@@ -1,6 +1,7 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
+
 //' Check, whether a matrix has row- and colnames.
 //' @param m A matrix
 //' @return Logical indicating existence of row- and colnames.
