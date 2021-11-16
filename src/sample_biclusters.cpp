@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <vector>
 #include <random>
+#include <chrono>
 #include "sample_biclusters.h"
 
 using namespace Rcpp;
@@ -53,15 +54,21 @@ List sample_biclusters(List bics, NumericMatrix mat){
   NumericVector rowh = rowhistogram(bics);
   NumericVector colh = colhistogram(bics);
   
+  //std::random_device rd;
+  //std::mt19937 mymt{rd()};
+  unsigned seed1 = std::chrono::system_clock::now().time_since_epoch().count();
+  std::mt19937 mymt{seed1};
+  
   for (int i=0;i<bics.length();i++){
     
     std::vector<int> sampled_rows((int)rowh[i]);
     std::vector<int> sampled_cols((int)colh[i]);
     
+    
     std::sample(rows.begin(), rows.end(), sampled_rows.begin(), 
-                (int) rowh[i], std::mt19937{std::random_device{}()});
+                (int) rowh[i], mymt);
     std::sample(cols.begin(), cols.end(), sampled_cols.begin(), 
-                (int) colh[i], std::mt19937{std::random_device{}()});
+                (int) colh[i], mymt);
     
     S4 bic("bicluster");
     bic.slot("row")=sampled_rows;
