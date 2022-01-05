@@ -371,7 +371,7 @@ methods::setGeneric("get_louvain_communities", function(bic_net,
 #'
 #' @param bic_net A \code{\link{bicluster_net}} object.
 #' @param min_size Minimum size of a louvain community to
-#' be returned (minimum value is 2).
+#' be returned.
 #' @param bics Optional. The respective list of biclusters to identify,
 #' from which algorithms a community originates.
 #' @return A list of \code{\link{bicluster_net}} objects.
@@ -388,13 +388,9 @@ methods::setMethod("get_louvain_communities",
     # c(bic_net="bicluster_net", min_size="numeric"),
     signature = "bicluster_net",
     definition = function(bic_net, min_size = 2, bics = NULL) {
-        if (min_size < 2) {
-            min_size <- 2
-            warning("Minimum value for parameter 'min_size' is 2.
-                    The input value has been replaced by 2.")
-        }
+        
         net <- bicluster_net_to_igraph(bic_net)
-        coms <- get_communities(igraph::cluster_louvain(net))
+        coms <- mosbi:::get_communities(igraph::cluster_louvain(net))
         out_l <- list()
         for (i in seq(1, length(coms))) {
             if (length(coms[[i]]) >= min_size) {
@@ -418,11 +414,23 @@ methods::setMethod("get_louvain_communities",
                         threshold = tmp_b@threshold, algorithms = algs
                     )
                 } else {
-                    out_l[[length(out_l) + 1]] <- bicluster_net(
-                        adjacency_matrix =
-                            bic_net@adjacency_matrix[coms[[i]], coms[[i]]],
-                        threshold = bic_net@threshold
-                    )
+                    if (length(coms[[i]]) > 1) {
+                        out_l[[length(out_l) + 1]] <- bicluster_net(
+                            adjacency_matrix =
+                                bic_net@adjacency_matrix[coms[[i]], coms[[i]]],
+                            threshold = bic_net@threshold
+                        )
+                    } else { # For the case of unconnected biclusters
+                        uc_tmp <- matrix(bic_net@adjacency_matrix[coms[[i]], coms[[i]]])
+                        rownames(uc_tmp) <- c(paste0("bicluster", coms[[i]]))
+                        colnames(uc_tmp) <- c(paste0("bicluster", coms[[i]]))
+                        
+                        out_l[[length(out_l) + 1]] <- bicluster_net(
+                            adjacency_matrix = uc_tmp,
+                            threshold = bic_net@threshold
+                        )
+                        
+                    }
                 }
             }
         }
