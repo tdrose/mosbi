@@ -87,7 +87,7 @@ attributeConnector <- function(mat, otherclasses, useOther = FALSE) {
 #' the function counts the occurance of all elements in the biclusters.
 #' 
 #' @param bics A list of \code{\link{bicluster}} objects.
-#' @param named Locigal, indicating, if all bicluster objects have names.
+#' @param named Boolean, indicating, if all bicluster objects have names.
 #' @return A Data Frame with the counts oof all elements.
 #' 
 #' @examples

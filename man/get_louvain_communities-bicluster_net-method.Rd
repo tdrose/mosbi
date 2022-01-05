@@ -10,7 +10,7 @@
 \item{bic_net}{A \code{\link{bicluster_net}} object.}
 
 \item{min_size}{Minimum size of a louvain community to
-be returned (minimum value is 2).}
+be returned.}
 
 \item{bics}{Optional. The respective list of biclusters to identify,
 from which algorithms a community originates.}

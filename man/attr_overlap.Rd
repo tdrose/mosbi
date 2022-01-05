@@ -9,7 +9,7 @@ attr_overlap(bics, named)
 \arguments{
 \item{bics}{A list of \code{\link{bicluster}} objects.}
 
-\item{named}{Locigal, indicating, if all bicluster objects have names.}
+\item{named}{Boolean, indicating, if all bicluster objects have names.}
 }
 \value{
 A Data Frame with the counts oof all elements.

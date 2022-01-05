@@ -1,6 +1,6 @@
 Package: mosbi
 Title: Molecular Signature identification using Biclustering
-Version: 1.1.2
+Version: 1.1.3
 Authors@R: c(
   person("Tim Daniel", "Rose", email="tim.rose@wzw.tum.de", 
   role = c("cre", "aut")),
@@ -63,6 +63,7 @@ Collate:
     'extract_biclustpy.R'
     'extract_fabia.R'
     'extract_isa.R'
+    'feature_louvain_overlap.R'
     'filter_biclusters.R'
     'get_biclusters.R'
     'misc.R'
