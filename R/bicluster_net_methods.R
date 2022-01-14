@@ -409,7 +409,6 @@ methods::setMethod("get_louvain_communities",
                         uc_tmp <- matrix(bic_net@adjacency_matrix[coms[[i]], coms[[i]]])
                         rownames(uc_tmp) <- c(paste0("bicluster", coms[[i]]))
                         colnames(uc_tmp) <- c(paste0("bicluster", coms[[i]]))
-                        print(uc_tmp)
                         out_l[[length(out_l) + 1]] <- bicluster_net(
                             adjacency_matrix = uc_tmp,
                             threshold = bic_net@threshold
@@ -439,7 +438,6 @@ methods::setMethod("get_louvain_communities",
                         uc_tmp <- matrix(bic_net@adjacency_matrix[coms[[i]], coms[[i]]])
                         rownames(uc_tmp) <- c(paste0("bicluster", coms[[i]]))
                         colnames(uc_tmp) <- c(paste0("bicluster", coms[[i]]))
-                        print(uc_tmp)
                         out_l[[length(out_l) + 1]] <- bicluster_net(
                             adjacency_matrix = uc_tmp,
                             threshold = bic_net@threshold

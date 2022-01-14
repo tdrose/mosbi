@@ -64,28 +64,21 @@ lipidomics dataset from the metabolights database will be used
 `https://www.ebi.ac.uk/metabolights/MTBLS562`. 
 The data consists of 40 samples (columns) and 245 lipids (rows).
 ```{r, message=FALSE}
-# Download file
-download.file(paste0("https://www.ebi.ac.uk/metabolights/ws/studies/MTBLS562/",
-              "download/1fb6c4f0-e87b-463a-bc77-1a0ff345ec3d?file=",
-              "m_aging_mouse_brains_metabolite_profiling_mass_",
-              "spectrometry-1_v2_maf.tsv"),
-    destfile = "aging_mouse_brain_data.tsv"
-)
+# get data
+data(mouse_data)
 
-# Load data
-data_table <- read.csv("aging_mouse_brain_data.tsv", sep = "\t")
-data_table <- data_table[c(
+mouse_data <- mouse_data[c(
     grep(
         "metabolite_identification",
-        colnames(data_table)
+        colnames(mouse_data)
     ),
-    grep("^X", colnames(data_table))
+    grep("^X", colnames(mouse_data))
 )]
 
 # Make data matrix
-data_matrix <- z_score(log2(as.matrix(data_table[2:ncol(data_table)])), 1)
+data_matrix <- z_score(log2(as.matrix(mouse_data[2:ncol(mouse_data)])), 1)
 
-rownames(data_matrix) <- data_table$metabolite_identification
+rownames(data_matrix) <- mouse_data$metabolite_identification
 
 stats::heatmap(data_matrix)
 ```
