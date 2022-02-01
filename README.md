@@ -20,7 +20,7 @@ The easiest way to install MoSBi is from Bioconductor.
 
 You can find the package [here](https://bioconductor.org/packages/mosbi/) and install is with this command:
 
-```
+``` r
 if (!require("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 
@@ -29,7 +29,7 @@ BiocManager::install("mosbi")
 
 For experienced users, the package can be installed directly from GitHub:
 
-```
+``` r
 # install.packages("devtools")
 devtools::install_github("tdrose/mosbi")
 ```
