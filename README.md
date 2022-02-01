@@ -6,7 +6,9 @@ R package of the biclustering ensemble algorithm MoSBi.
 For information about the algorithm please have a look at the publication:
 
 >MoSBi: Automated signature mining for molecular stratification and subtyping
+>
 >Tim Daniel Rose, Thibault Bechtler, Octavia-Andreea Ciora, Kim Anh Lilian Le, Florian Molnar, Nikolai Koehler, Jan Baumbach, Richard Röttger, Josch Konstantin Pauling
+>
 >bioRxiv 2021.09.30.462567; 
 
 
