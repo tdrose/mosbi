@@ -11,12 +11,13 @@ A data frame with 245 rows and 61 columns
 \url{https://www.ebi.ac.uk/metabolights/MTBLS562}
 }
 \usage{
-mouse_data
+data(mouse_data)
 }
 \description{
 Development of the mice brain lipidome over several weeks.
 }
 \examples{
 # data(mouse_data)
+# View(mouse_data)
 }
 \keyword{datasets}

@@ -1,13 +1,13 @@
 Package: mosbi
 Title: Molecular Signature identification using Biclustering
-Version: 1.1.5
+Version: 1.1.6
 Authors@R: c(
   person("Tim Daniel", "Rose", email="tim.rose@wzw.tum.de", 
   role = c("cre", "aut")),
   person("Josch Konstantin", "Pauling", 
-  email="josch.pauling@tum.de", role = c("cre", "aut")),
+  email="josch.pauling@tum.de", role = c("aut")),
   person("Nikolai", "Koehler", 
-  email="nikolai.koehler@tum.de", role = c("cre", "aut")))
+  email="nikolai.koehler@tum.de", role = c("aut")))
 Description: This package is a implementation of biclustering ensemble 
   method MoSBi (Molecular signature Identification from Biclustering).
   MoSBi provides standardized interfaces for biclustering results and 
