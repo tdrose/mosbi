@@ -4,16 +4,15 @@ citEntry(
   entry    = "Article",
   title    = "MoSBi: Automated signature mining for molecular stratification and subtyping",
   author   = "Rose, Tim Daniel and Bechtler, Thibault and Ciora, Octavia-Andreea and Lilian Le, Kim Anh and Molnar, Florian and Koehler, Nikolai and Baumbach, Jan and Roettger, Richard and Pauling, Josch Konstantin",
-  journal  = "bioRxiv",
-  year     = 2021,
-  volume   = "",
-  number   = "2021.09.30.462567",
-  pages    = "",
-  url      = "https://doi.org/10.1101/2021.09.30.462567",
+  journal  = "Proceedings of the National Academy of Sciences",
+  year     = 2022,
+  volume   = "119",
+  number   = "16",
+  pages    = "e2118210119",
+  url      = "https://doi.org/10.1073/pnas.2118210119",
   textVersion = paste(
-    "Tim Daniel Rose et al. \n
-    'MoSBi: Automated signature mining for molecular stratification and subtyping'\n
-    bioRxiv 2021.09.30.462567;
-    doi: https://doi.org/10.1101/2021.09.30.462567"
+    "TD Rose et al.; MoSBi: Automated signature mining for molecular stratification and subtyping,",
+    "Proceedings of the National Academy of Sciences, 2022; 119 (16): e2118210119;",
+    "doi: https://doi.org/10.1073/pnas.2118210119"
   )
 )

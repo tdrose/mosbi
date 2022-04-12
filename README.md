@@ -9,10 +9,10 @@ For information about the algorithm please have a look at the publication:
 >
 >Tim Daniel Rose, Thibault Bechtler, Octavia-Andreea Ciora, Kim Anh Lilian Le, Florian Molnar, Nikolai Koehler, Jan Baumbach, Richard Röttger, Josch Konstantin Pauling
 >
->bioRxiv 2021.09.30.462567; 
+>Proceedings of the National Academy of Sciences, 2022; 119 (16): e2118210119; 
 
 
-doi: [https://doi.org/10.1101/2021.09.30.462567](https://doi.org/10.1101/2021.09.30.462567)
+doi: [https://doi.org/10.1073/pnas.2118210119](https://doi.org/10.1073/pnas.2118210119)
 
 ### Installation
 
