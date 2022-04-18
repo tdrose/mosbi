@@ -3,7 +3,16 @@ citHeader("To cite mosbi in publications use:")
 citEntry(
   entry    = "Article",
   title    = "MoSBi: Automated signature mining for molecular stratification and subtyping",
-  author   = "Rose, Tim Daniel and Bechtler, Thibault and Ciora, Octavia-Andreea and Lilian Le, Kim Anh and Molnar, Florian and Koehler, Nikolai and Baumbach, Jan and Roettger, Richard and Pauling, Josch Konstantin",
+  author   = personList(
+                person(last="Rose", first="Tim", middle="Daniel"),
+                person(last="Bechtler", first="Thibault", middle=""),
+                person(last="Ciora", first="Octavia-Andreea ", middle=""),
+                person(last="Lilian Le", first="Kim", middle="Anh"),
+                person(last="Molnar", first="Florian", middle=""),
+                person(last="Koehler", first="Nikolai", middle=""),
+                person(last="Baumbach", first="Jan", middle=""),
+                person(last="Roettger", first="Richard", middle=""),
+                person(last="Pauling", first="Josch", middle="Konstantin")),
   journal  = "Proceedings of the National Academy of Sciences",
   year     = 2022,
   volume   = "119",

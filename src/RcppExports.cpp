@@ -5,6 +5,11 @@
 
 using namespace Rcpp;
 
+#ifdef RCPP_USE_GLOBAL_ROSTREAM
+Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
+Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
+#endif
+
 // replace_threshold
 IntegerMatrix replace_threshold(IntegerMatrix m, int threshold);
 RcppExport SEXP _mosbi_replace_threshold(SEXP mSEXP, SEXP thresholdSEXP) {
