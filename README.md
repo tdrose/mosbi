@@ -11,8 +11,7 @@ For information about the algorithm please have a look at the publication:
 >
 >Proceedings of the National Academy of Sciences, 2022; 119 (16): e2118210119; 
 
-
-doi: [https://doi.org/10.1073/pnas.2118210119](https://doi.org/10.1073/pnas.2118210119)
+>doi: [https://doi.org/10.1073/pnas.2118210119](https://doi.org/10.1073/pnas.2118210119)
 
 ### Installation
 
